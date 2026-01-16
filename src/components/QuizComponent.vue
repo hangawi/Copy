@@ -358,7 +358,7 @@ onMounted(() => {
               <v-progress-linear
                 bg-color="#e9e9e9"
                 bg-opacity="100"
-                color="#30e1c6"
+                color="#6ab554"
                 height="12"
                 :max="TOTAL_TIME"
                 :model-value="progress"
@@ -607,7 +607,7 @@ onMounted(() => {
   p.title {
     font-family: 'Paperlogy-5Medium', sans-serif;
     font-size: 23px;
-    color: #564f1c;
+    color: #0e7300;
     font-weight: 500;
     margin: 0;
   }
@@ -615,13 +615,13 @@ onMounted(() => {
   p.timer {
     font-family: 'Paperlogy-7Bold', sans-serif;
     font-size: 22px;
-    color: #1e9e8a;
+    color: #6ab554;
     font-weight: 600;
     border-radius: 50%;
     letter-spacing: 0;
     width: 50px;
     height: 50px;
-    border: 6px solid #1e9e8a;
+    border: 6px solid #6ab554;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -688,7 +688,7 @@ onMounted(() => {
   margin-top: 0;
   line-height: 1.2em;
   word-break: keep-all;
-  color: #1e9e8a;
+  color: #0e7300;
   span.positive {
     color: #ff6699;
     border-bottom: 2px solid;
@@ -810,12 +810,12 @@ ul#exam-list {
   cursor: pointer;
   div {
     &.exam-number {
-      background-color: #1e9e8a;
+      background-color: #0e7300;
       color: #fff;
-      border: 2px solid #1e9e8a;
+      border: 2px solid #0e7300;
     }
     &.exam-text {
-      color: #1e9e8a;
+      color: #0e7300;
     }
   }
 }
@@ -833,7 +833,7 @@ ul#exam-list {
     font-family: 'Paperlogy-7Bold', serif;
     font-size: 45px;
     font-weight: 700;
-    color: #1e9e8a;
+    color: #0e7300;
     margin-left: 15px;
     margin-top: 50px;
   }
@@ -1011,7 +1011,7 @@ ul#exam-list {
   font-size: 68px;
   font-weight: 600;
   letter-spacing: -4px;
-  color: #1e9e8a;
+  color: #0e7300;
   margin-top: -10px;
   margin-right : 3px;
   margin-bottom: 44px;
@@ -1021,9 +1021,9 @@ ul#exam-list {
   font-family: 'Paperlogy-7ExtraBold', sans-serif;
   font-size: 140px;
   font-weight: 700;
-  color: #1e9e8a;
-  -webkit-text-stroke: 2px #38ab9b;
-  text-shadow: 2px 2px 0 #38ab9b;
+  color: #0e7300;
+  -webkit-text-stroke: 2px #0e7300;
+  text-shadow: 2px 2px 0 #0e7300;
   animation: pulse 1s ease-in-out;
 }
 

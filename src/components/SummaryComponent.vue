@@ -40,8 +40,8 @@ onMounted(() => {
             <li
               v-for="(context, subIndex) in summaryLists[summarySeq].context"
               :key="subIndex"
-              class="animate__animated animate__fadeIn"
-              :class="`animate__delay-${2 + subIndex}s`"
+              class="fade-in-item"
+              :style="{ animationDelay: `${2 + Number(subIndex) * 0.5}s` }"
               v-html="context"
             />
           </ul>
@@ -76,12 +76,12 @@ onMounted(() => {
 // 학습정리
 .summary-area {
   max-width: 880px;
-  max-height: 180px;  // 스크롤 영역 높이 제한
+  max-height: 980px;  // 스크롤 영역 높이 제한
   width: 900px;
   height: auto;
   position: relative;
   margin-left: 124px;
-  margin-top: 300px;
+  margin-top: 150px;
   font-family: 'Paperlogy-5Medium', sans-serif;
   font-size: 30px;
   letter-spacing: -1px;
@@ -123,27 +123,39 @@ onMounted(() => {
     font-size: 30px;
     ul {
       li {
-        font-size: 26px;
+        font-size: 18px;
         vertical-align: middle;
         line-height: 29px;
         word-break: keep-all;
         list-style-type: none;
-        //text-indent: -20px;
         display: flex;
-        align-items: center;
-        margin: 20px 0;
+        align-items: flex-start;
+        margin: 10px 0;
+        opacity: 0;
+        animation: fadeInItem 0.5s forwards;
         &::before {
           content: "";
           width: 12px;
           height: 12px;
           margin-right: 10px;
-          margin-top: -4px;
+          margin-top: 8px;
           background: transparent url(@/assets/img/summary/bullet.png) no-repeat 0 0;
           background-size: contain;
           flex-shrink: 0;
         }
       }
     }
+  }
+}
+
+@keyframes fadeInItem {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 </style>

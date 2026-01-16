@@ -12,12 +12,13 @@ import Page8 from './flow/Page8.vue'
 import Page9 from './flow/Page9.vue'
 import Page10 from './flow/Page10.vue'
 import Page11 from './flow/Page11.vue'
+import Page12 from './flow/Page12.vue'
 
 const subjectName = '웹개발 첫걸음: HTML과 CSS로 정적웹페이지 만들기'
 const chapterName = '1차시'
 
 const currentPage = ref(window['_currentPage'])
-const totalPages = 11
+const totalPages = 12
 
 const isLocal = document.location.hostname === 'localhost'
 
@@ -81,6 +82,7 @@ export default defineComponent({
     Page9,
     Page10,
     Page11,
+    Page12,
   },
   setup() {
   },
@@ -121,6 +123,7 @@ export default defineComponent({
       <Page9 v-if="currentPage === 9" :current-page="currentPage" :total-pages="totalPages" @prev-page="prevPage" @next-page="nextPage" @change-page="changePage" />
       <Page10 v-if="currentPage === 10" :current-page="currentPage" :total-pages="totalPages" @prev-page="prevPage" @next-page="nextPage" @change-page="changePage" />
       <Page11 v-if="currentPage === 11" :current-page="currentPage" :total-pages="totalPages" @prev-page="prevPage" @next-page="nextPage" @change-page="changePage" />
+      <Page12 v-if="currentPage === 12" :current-page="currentPage" :total-pages="totalPages" @prev-page="prevPage" @next-page="nextPage" @change-page="changePage" />
     </v-main>
   </v-app>
 </template>

@@ -868,10 +868,10 @@ onBeforeUnmount(() => {
   justify-content: center;
   p {
     font-family: 'Paperlogy-5Medium', sans-serif;
-    font-size: 18px; // 챕터이름 크기
+    font-size: 17px; // 챕터이름 크기
     font-weight: 200;
     letter-spacing: -1px;
-    margin-left: 0;
+    margin-left: 7px;
     margin-top: 0;
     word-break: keep-all;
     color: #000000; // 챕터이름 색상

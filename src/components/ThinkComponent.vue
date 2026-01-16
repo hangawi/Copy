@@ -122,7 +122,7 @@ onMounted(() => {
   margin-bottom: -40px;
   line-height: 1.2em;
   word-break: keep-all;
-  color: #0ea18a;
+  color: #ffffff;
   position: absolute;
   top: 130px; //적어질수록 위로 올라감
   left: 130px; //적어질수록 왼쪽으로 이동

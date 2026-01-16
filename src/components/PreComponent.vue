@@ -299,7 +299,7 @@ onMounted(() => {
     font-family: 'Paperlogy-8ExtraBold', serif;
     font-weight: 400;
     font-size: 42px;
-    color: #048f7a;
+    color: #0e7300;
     position: absolute;
     top: 163px;
     left: 643px;

@@ -2,9 +2,13 @@
 import { onMounted, ref } from 'vue'
 import axios from 'axios'
 import VideoComponent from '@/components/VideoComponent.vue'
-import SummaryComponent from '@/components/SummaryComponent.vue'
 
-import poster from '@/assets/img/common/poster.png'
+import QuizComponent from '@/components/QuizComponent.vue'
+
+// import audio from '@/assets/sound/narr/quiz.mp3'
+import imgQ1 from '@/assets/img/quiz/qNum_1.png'
+import imgQ2 from '@/assets/img/quiz/qNum_2.png'
+import imgQ3 from '@/assets/img/quiz/qNum_3.png'
 
 const props = defineProps({
   currentPage: {
@@ -24,7 +28,7 @@ let json
 const courseInfo = ref()
 const pageInfo = ref()
 const video = ref()
-const summaryLists = ref()
+const questionLists = ref()
 const scriptText = ref()
 
 const isReady = ref(false)
@@ -35,8 +39,37 @@ axios.get('/data/01.json').then((result) => {
   courseInfo.value = json.courseInfo
   pageInfo.value = json.pageInfo
   video.value = json.video_10 as string
-  summaryLists.value = json.summary
-  scriptText.value = json.scripts[8] as string
+  questionLists.value = [
+    {
+      qNum:      imgQ1,
+      question:  json.quiz[0].question,
+      sentence:  json.quiz[0].sentence,
+      tall:      json.quiz[0].tall,
+      examLists: json.quiz[0].examLists,
+      correct:   json.quiz[0].correct,
+      explain:   json.quiz[0].explain,
+    },
+    {
+      qNum:      imgQ2,
+      question:  json.quiz[1].question,
+      sentence:  json.quiz[1].sentence,
+      tall:      json.quiz[1].tall,
+      examLists: json.quiz[1].examLists,
+      correct:   json.quiz[1].correct,
+      explain:   json.quiz[1].explain,
+    },
+    {
+      qNum:      imgQ3,
+      question:  json.quiz[2].question,
+      sentence:  json.quiz[2].sentence,
+      tall:      json.quiz[2].tall,
+      examLists: json.quiz[2].examLists,
+      correct:   json.quiz[2].correct,
+      explain:   json.quiz[2].explain,
+    },
+  ]
+
+  scriptText.value = json.scripts[7] as string
 
   setTimeout(() => {
     isReady.value = true
@@ -44,6 +77,8 @@ axios.get('/data/01.json').then((result) => {
 }).catch(() => {
   console.log('error')
 })
+
+const refQuiz = ref('')
 
 const handlePrev = () => {
   emit('prevPage')
@@ -56,6 +91,11 @@ const handleChangeIndex = (target: number) => {
 }
 
 onMounted(() => {
+  setTimeout(() => {
+    const elMain = document.querySelector('#refInteractive') as HTMLDivElement
+    const elVideo = document.querySelector('#videoPlayer') as HTMLVideoElement
+    elVideo.appendChild(elMain)
+  }, 100)
   parent.setCurrentPageNumber(10)
 })
 </script>
@@ -63,7 +103,6 @@ onMounted(() => {
 <template>
   <VideoComponent
     v-if="isReady"
-    :poster="poster"
     :video="video"
     :course-info="courseInfo"
     :page-info="pageInfo"
@@ -75,15 +114,20 @@ onMounted(() => {
     @handle-next="handleNext"
     @handle-change-page="handleChangeIndex"
   />
-  <div id="refInteractive" ref="refSummary" class="zIndex-10">
-    <SummaryComponent
+  <div id="refInteractive" ref="refQuiz" class="animate__animated animate__fadeIn animate__delay-5s">
+    <QuizComponent
       v-if="isReady"
-      :summary-lists="summaryLists"
+      :course-info="courseInfo"
+      :question-lists="questionLists"
+      @handle-next="handleNext"
     />
   </div>
 </template>
 
 <style scoped>
+.video-js .vjs-tech {
+  display: none;
+}
 #refInteractive {
   position: absolute;
   width: 1120px;
