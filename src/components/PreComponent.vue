@@ -22,6 +22,9 @@ const isFinish = ref(false)
 
 const score = ref([0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
 
+// 정답: 1=O, 2=X, 3=O, 4=O, 5=X, 6=O, 7=X, 8=O, 9=O, 10=X
+const answers = [1, 2, 1, 1, 2, 1, 2, 1, 1, 2] // 1=O, 2=X
+
 const level = ref('')
 
 const handleStart = () => {
@@ -56,7 +59,10 @@ const handleCheck = (row, col, e) => {
       elButton.classList.remove('checked')
   })
   e.target.classList.add('checked')
-  score.value[row - 1] = (col === 1) ? 5 : 0
+
+  // 정답 체크: 사용자 선택(col)과 정답(answers[row - 1])이 같으면 5점, 다르면 0점
+  const isCorrect = col === answers[row - 1]
+  score.value[row - 1] = isCorrect ? 5 : 0
 
   let isCompleted = false
   let totalScore = 0
@@ -189,9 +195,9 @@ onMounted(() => {
   background: transparent url(@/assets/img/pre/btnSubmit.png) no-repeat 0 0;
   background-size: contain;
   text-indent: -9999em;
-  width: 144px;
-  height: 40px;
-  top: 169px;
+  width: 194px;
+  height: 120px;
+  top: 142px;
   transition: background 300ms ease-in-out;
   &:hover {
     background: transparent url(@/assets/img/pre/btnSubmitOn.png) no-repeat 0 0;
@@ -202,7 +208,7 @@ onMounted(() => {
 .checkLists {
   position: relative;
   left: 905px; //위치
-  top: 170px;
+  top: 142px;
   .checkCols {
     position: relative;
     width: 20px; 

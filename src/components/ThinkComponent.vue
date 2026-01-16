@@ -179,7 +179,7 @@ onMounted(() => {
     overflow-y: auto;
     word-break: keep-all;
     font-family: 'Paperlogy-4Regular', sans-serif;
-    font-size: 25px; //답변 글씨 크기
+    font-size: 27px; //답변 글씨 크기
     font-weight: 400;
     color: #333;
     &::-webkit-scrollbar {

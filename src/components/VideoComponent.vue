@@ -858,7 +858,7 @@ onBeforeUnmount(() => {
   position: absolute;
   top: calc(50% - 314px);
   left: calc(50% - 429px); // 챕터이름 왼쪽으로 조정 숫자가 클수록 왼쪽
-  z-index: 1;
+  z-index: 9999;
   background: transparent url(@/assets/img/top/shape.png) no-repeat center center;
   background-size: contain;
   width: 290px; // shape.png 배경 너비

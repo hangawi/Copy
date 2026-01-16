@@ -429,7 +429,6 @@ onMounted(() => {
     <v-overlay
       v-model="alert"
       no-click-animation
-      contained
       persistent
       scrim="#000"
       class="align-center justify-center alert-overlay"
@@ -897,6 +896,8 @@ ul#exam-list {
 
 // 피드백 앨럿창
 .imgAlert {
+  width: 800px;              // 너비 (숫자를 줄이면 작아짐)
+  height: auto;
   touch-action: none;
   pointer-events: none;
   -webkit-user-drag: none;
@@ -971,6 +972,23 @@ ul#exam-list {
     background: transparent url(@/assets/img/quiz/btnRetryOn.png) no-repeat 0 0;
     background-size: contain;
   }
+}
+
+.alert-overlay {
+  z-index: 99999 !important;
+}
+
+.alert-overlay :deep(.v-overlay__scrim) {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 99998 !important;
+}
+
+.alert-overlay :deep(.v-overlay__content) {
+  z-index: 99999 !important;
 }
 
 .countdown-overlay {
