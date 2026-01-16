@@ -22,8 +22,8 @@ const isFinish = ref(false)
 
 const score = ref([0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
 
-// 정답: 1=O, 2=X, 3=O, 4=O, 5=X, 6=O, 7=X, 8=O, 9=O, 10=X
-const answers = [1, 2, 1, 1, 2, 1, 2, 1, 1, 2] // 1=O, 2=X
+// 정답: 1=O, 2=X, 3=x, 4=x, 5=o, 6=x, 7=0, 8=0, 9=x, 10=X
+const answers = [1, 2, 2, 2, 1, 2, 1, 1, 2, 2] // 1=O, 2=X
 
 const level = ref('')
 
