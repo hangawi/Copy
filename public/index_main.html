@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미래를 밝히는 기술, 스마트에너지 ICT - 검토용</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <!-- Animate.css CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <div class="container max-w-4xl mx-auto p-6">
+        <h1 class="text-2xl font-bold text-gray-800 mb-6">교과목 컨텐츠 리스트 - 검토용</h1>
+
+        <!-- 컨텐츠 목록이 여기에 동적으로 생성됩니다 -->
+        <div id="content-container"></div>
+    </div>
+
+    <script>
+        // 교과목 데이터
+        const contentsData = {
+            "미래를 밝히는 기술, 스마트에너지 ICT": [
+                {chapter: "1", path: "./01/01.html"},
+                {chapter: "2", path: "./02/01.html"},
+                {chapter: "3", path: "./03/01.html"},
+                {chapter: "4", path: "./04/01.html"},
+                {chapter: "5", path: "./05/01.html"},
+                {chapter: "6", path: "./06/01.html"},
+                {chapter: "7", path: "./07/01.html"},
+                {chapter: "8", path: "./08/01.html"},
+                {chapter: "9", path: "./09/01.html"},
+                {chapter: "10", path: "./10/01.html"},
+                {chapter: "11", path: "./11/01.html"},
+                {chapter: "12", path: "./12/01.html"},
+                {chapter: "13", path: "./13/01.html"},
+                {chapter: "14", path: "./14/01.html"},
+                {chapter: "15", path: "./15/01.html"},
+                {chapter: "16", path: "./16/01.html"},
+                {chapter: "17", path: "./17/01.html"},
+                {chapter: "18", path: "./18/01.html"},
+                {chapter: "19", path: "./19/01.html"},
+            ],
+        };
+
+        // DOM이 로드된 후 콘텐츠 생성
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.getElementById('content-container');
+
+            for (const subject in contentsData) {
+                const items = contentsData[subject];
+
+                const sectionDiv = document.createElement('div');
+                sectionDiv.className = 'mb-8 animate__animated animate__fadeIn';
+
+                const titleH2 = document.createElement('h2');
+                titleH2.className = 'text-xl font-semibold text-gray-700 mb-3';
+                titleH2.textContent = subject;
+                sectionDiv.appendChild(titleH2);
+
+                const tableContainer = document.createElement('div');
+                tableContainer.className = 'bg-white rounded-lg shadow overflow-hidden';
+
+                const table = document.createElement('table');
+                table.className = 'min-w-full divide-y divide-gray-200';
+
+                const thead = document.createElement('thead');
+                thead.className = 'bg-gray-100';
+                thead.innerHTML = `
+                    <tr>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">차시</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">경로</th>
+                        <th scope="col" class="px-6 py-3 w-30 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">열기</th>
+                    </tr>
+                `;
+                table.appendChild(thead);
+
+                const tbody = document.createElement('tbody');
+                tbody.className = 'bg-white divide-y divide-gray-200';
+
+                items.forEach((item, index) => {
+                    const tr = document.createElement('tr');
+                    tr.className = index % 2 === 0 ? 'bg-white' : 'bg-gray-50';
+                    tr.classList.add('animate__animated', 'animate__fadeIn');
+                    tr.style.animationDelay = `${index * 0.1}s`;
+
+                    const chapterCell = document.createElement('td');
+                    chapterCell.className = 'px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900';
+                    chapterCell.textContent = `${item.chapter}차시`;
+                    tr.appendChild(chapterCell);
+
+                    const pathCell = document.createElement('td');
+                    pathCell.className = 'px-6 py-4 whitespace-nowrap text-sm text-gray-500';
+                    pathCell.textContent = item.path;
+                    tr.appendChild(pathCell);
+
+                    const buttonCell = document.createElement('td');
+                    buttonCell.className = 'px-6 py-4 whitespace-nowrap text-sm';
+                    const button = document.createElement('button');
+                    button.className = 'bg-blue-500 hover:bg-blue-600 text-white py-1 px-3 rounded text-sm transition duration-300 cursor-pointer';
+                    button.textContent = '보기';
+                    // **window.open**으로 새 창 열기
+                    button.onclick = function() {
+                        window.open(item.path, '_blank', 'width=1120,height=630,scrollbars=yes,resizable=yes');
+                    };
+                    buttonCell.appendChild(button);
+                    tr.appendChild(buttonCell);
+
+                    tbody.appendChild(tr);
+                });
+
+                table.appendChild(tbody);
+                tableContainer.appendChild(table);
+                sectionDiv.appendChild(tableContainer);
+                container.appendChild(sectionDiv);
+            }
+        });
+    </script>
+</body>
+</html>

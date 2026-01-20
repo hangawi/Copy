@@ -27,7 +27,7 @@ const scriptText = ref()
 
 const isReady = ref(false)
 
-axios.get('/data/06.json').then((result) => {
+axios.get('/data/19.json').then((result) => {
   json = result.data
 
   courseInfo.value = json.courseInfo
@@ -53,7 +53,7 @@ const handleChangeIndex = (target: number) => {
 }
 
 onMounted(() => {
-  parent.setCurrentPageNumber(4)
+  parent.setCurrentPageNumber(5)
 })
 </script>
 

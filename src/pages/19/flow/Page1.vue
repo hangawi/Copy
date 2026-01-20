@@ -27,13 +27,13 @@ const scriptText = ref()
 
 const isReady = ref(false)
 
-axios.get('/data/06.json').then((result) => {
+axios.get('/data/19.json').then((result) => {
   json = result.data
 
   courseInfo.value = json.courseInfo
   pageInfo.value = json.pageInfo
-  video.value = json.video_5 as string
-  scriptText.value = json.scripts[4] as string
+  video.value = json.video_1 as string
+  scriptText.value = json.scripts[0] as string
 
   setTimeout(() => {
     isReady.value = true
@@ -53,7 +53,7 @@ const handleChangeIndex = (target: number) => {
 }
 
 onMounted(() => {
-  parent.setCurrentPageNumber(4)
+  parent.setCurrentPageNumber(1)
 })
 </script>
 
@@ -67,7 +67,7 @@ onMounted(() => {
     :script-text="scriptText"
     :current-page="props.currentPage"
     :total-pages="props.totalPages"
-    :auto-start="true"
+    :auto-start="false"
     @handle-prev="handlePrev"
     @handle-next="handleNext"
     @handle-change-page="handleChangeIndex"

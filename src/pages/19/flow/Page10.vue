@@ -2,6 +2,7 @@
 import { onMounted, ref } from 'vue'
 import axios from 'axios'
 import VideoComponent from '@/components/VideoComponent.vue'
+import SummaryComponent from '@/components/SummaryComponent.vue'
 
 import poster from '@/assets/img/common/poster.png'
 
@@ -23,17 +24,19 @@ let json
 const courseInfo = ref()
 const pageInfo = ref()
 const video = ref()
+const summaryLists = ref()
 const scriptText = ref()
 
 const isReady = ref(false)
 
-axios.get('/data/06.json').then((result) => {
+axios.get('/data/19.json').then((result) => {
   json = result.data
 
   courseInfo.value = json.courseInfo
   pageInfo.value = json.pageInfo
-  video.value = json.video_5 as string
-  scriptText.value = json.scripts[4] as string
+  video.value = json.video_10 as string
+  summaryLists.value = json.summary
+  scriptText.value = json.scripts[8] as string
 
   setTimeout(() => {
     isReady.value = true
@@ -53,7 +56,7 @@ const handleChangeIndex = (target: number) => {
 }
 
 onMounted(() => {
-  parent.setCurrentPageNumber(4)
+  parent.setCurrentPageNumber(10)
 })
 </script>
 
@@ -72,7 +75,12 @@ onMounted(() => {
     @handle-next="handleNext"
     @handle-change-page="handleChangeIndex"
   />
-  <div id="refInteractive" />
+  <div id="refInteractive" ref="refSummary" class="zIndex-10">
+    <SummaryComponent
+      v-if="isReady"
+      :summary-lists="summaryLists"
+    />
+  </div>
 </template>
 
 <style scoped>
@@ -81,6 +89,6 @@ onMounted(() => {
   width: 1120px;
   height: 630px;
   overflow: hidden;
-  pointer-events: none;
 }
 </style>
+

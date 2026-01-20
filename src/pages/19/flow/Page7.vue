@@ -27,12 +27,12 @@ const scriptText = ref()
 
 const isReady = ref(false)
 
-axios.get('/data/06.json').then((result) => {
+axios.get('/data/19.json').then((result) => {
   json = result.data
 
   courseInfo.value = json.courseInfo
   pageInfo.value = json.pageInfo
-  video.value = json.video_5 as string
+  video.value = json.video_7 as string
   scriptText.value = json.scripts[4] as string
 
   setTimeout(() => {
@@ -53,7 +53,7 @@ const handleChangeIndex = (target: number) => {
 }
 
 onMounted(() => {
-  parent.setCurrentPageNumber(4)
+  parent.setCurrentPageNumber(7)
 })
 </script>
 

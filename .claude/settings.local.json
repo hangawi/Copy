@@ -4,7 +4,11 @@
       "Bash(for file in *.vue)",
       "Bash(do sed -i \"s|/data/02.json|/data/03.json|g\" \"$file\")",
       "Bash(done)",
-      "Bash(git checkout:*)"
+      "Bash(git checkout:*)",
+      "Bash(grep:*)",
+      "Bash(test:*)",
+      "Bash(npm run preview:*)",
+      "Bash(curl:*)"
     ]
   }
 }

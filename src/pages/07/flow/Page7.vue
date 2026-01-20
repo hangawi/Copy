@@ -33,7 +33,7 @@ axios.get('/data/07.json').then((result) => {
   courseInfo.value = json.courseInfo
   pageInfo.value = json.pageInfo
   video.value = json.video_7 as string
-  scriptText.value = json.scripts[4] as string
+  scriptText.value = json.scripts[6] as string
 
   setTimeout(() => {
     isReady.value = true
@@ -53,7 +53,7 @@ const handleChangeIndex = (target: number) => {
 }
 
 onMounted(() => {
-  parent.setCurrentPageNumber(7)
+  parent.setCurrentPageNumber(6)
 })
 </script>
 

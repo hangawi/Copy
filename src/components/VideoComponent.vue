@@ -790,6 +790,10 @@ onBeforeUnmount(() => {
         <p>{{ chapterTitle }}</p>
       </v-col>
     </v-row>
+
+    <div v-if="currentPage !== 1 && currentPage !== totalPages" id="course-title" class="animate__animated animate__fadeIn animate__delay-0_2s">
+      {{ courseInfo.courseName }}
+    </div>
   </Teleport>
 
   <div id="index-menu">
@@ -799,10 +803,6 @@ onBeforeUnmount(() => {
       <!--        {{ courseInfo.chapterNumber }}. -->
       <!--        {{ courseInfo.chapterTitle }} -->
       </p>
-    </div>
-    <!-- <div id="course-title" :class="(currentPage === 1) ? 'animate__animated animate__backInRight' : 'animate__animated animate__fadeIn animate__delay-0_2s'"> -->
-    <div id="course-title" class="animate__animated animate__fadeIn animate__delay-0_2s">
-      {{ courseInfo.courseName }}
     </div>
     <!-- <button id="index-open" class="animate__animated animate__fadeInUp animate__faster animate__delay-1s" @click="showIndex = !showIndex"> -->
     <!--   index -->
@@ -868,7 +868,7 @@ onBeforeUnmount(() => {
   justify-content: center;
   p {
     font-family: 'Paperlogy-5Medium', sans-serif;
-    font-size: 17px; // 챕터이름 크기
+    font-size: 14px; // 챕터이름 크기
     font-weight: 200;
     letter-spacing: -1px;
     margin-left: 7px;
@@ -1016,13 +1016,15 @@ onBeforeUnmount(() => {
 }
 
 #course-title {
-  position: fixed;
-  // TODO 과정명
-  //background: transparent url(@/assets/img/top/contentsTitle.png) no-repeat 0 0;
-  width: 300px;
-  height: 60px;
-  background-size: 300px 60px !important;
+  position: absolute;
+  top: calc(50% - 295px);
+  right: calc(50% - 689px);
+  background: transparent url(@/assets/img/top/contentsTitle.png) no-repeat center center;
+  width: 527px;
+  height: 39px;
+  background-size: contain !important;
   text-indent: -9999em;
+  z-index: 9999;
 }
 
 #index-menu {

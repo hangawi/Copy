@@ -76,12 +76,12 @@ onMounted(() => {
 // 학습정리
 .summary-area {
   max-width: 880px;
-  max-height: 980px;  // 스크롤 영역 높이 제한
+  max-height: 400px;  // 스크롤 영역 높이 제한 (29px * 10줄 = 290px)
   width: 900px;
   height: auto;
   position: relative;
-  margin-left: 124px;
-  margin-top: 150px;
+  margin-left: 110px;
+  margin-top: 135px;
   font-family: 'Paperlogy-5Medium', sans-serif;
   font-size: 30px;
   letter-spacing: -1px;
@@ -89,9 +89,11 @@ onMounted(() => {
   color: #000;
   overflow-x: hidden;
   overflow-y: auto;
+  padding-right: 0px;
+  scroll-snap-type: y mandatory;
   &::-webkit-scrollbar {
     width: 10px;
-    background-color: #ffffff;
+    background-color: transparent;
   }
   &::-webkit-scrollbar-thumb {
     background-color: #808080;
@@ -99,7 +101,8 @@ onMounted(() => {
   }
   &::-webkit-scrollbar-track {
     background-color: #ffffff;
-    border-radius: 0;
+    border-radius: 5px;
+    margin: 00px 0 00px 0;
   }
   &::-webkit-scrollbar-button {
     display: block;
@@ -123,25 +126,26 @@ onMounted(() => {
     font-size: 30px;
     ul {
       li {
-        font-size: 18px;
-        vertical-align: middle;
+        font-size: 22px;
         line-height: 29px;
         word-break: keep-all;
         list-style-type: none;
-        display: flex;
-        align-items: flex-start;
+        display: block;
+        padding-left: 22px;
+        position: relative;
         margin: 10px 0;
         opacity: 0;
         animation: fadeInItem 0.5s forwards;
+        scroll-snap-align: start;
         &::before {
           content: "";
           width: 12px;
           height: 12px;
-          margin-right: 10px;
-          margin-top: 8px;
+          position: absolute;
+          left: 0;
+          top: 8px;
           background: transparent url(@/assets/img/summary/bullet.png) no-repeat 0 0;
           background-size: contain;
-          flex-shrink: 0;
         }
       }
     }

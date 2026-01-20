@@ -56,7 +56,7 @@ const handleChangeIndex = (target: number) => {
 }
 
 onMounted(() => {
-  parent.setCurrentPageNumber(10)
+  parent.setCurrentPageNumber(8)
 })
 </script>
 
@@ -91,3 +91,4 @@ onMounted(() => {
   overflow: hidden;
 }
 </style>
+
