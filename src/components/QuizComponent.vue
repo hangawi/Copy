@@ -40,6 +40,7 @@ const quizSeq = ref(0)
 const quizCompleted = ref(false)
 const showResult = ref(false)
 const alert = ref(false)
+const showAlways = ref(true)
 
 const isReady = ref(false)
 
@@ -229,7 +230,16 @@ const handleRetry = () => {
   challengeCount = 0
   quizSeq.value = 0
   quizCompleted.value = false
+  userAnswer.value = [null, null]
   soundClick.play()
+
+  // 모든 exam-lists 초기화
+  const elExamLists = document.querySelectorAll('.exam-lists')
+  elExamLists.forEach((list) => {
+    const _list = list as HTMLLIElement
+    _list.style.pointerEvents = ''
+    _list.classList.remove('selected', 'correct')
+  })
 
   stopTimer()
   startCountdown()
@@ -278,6 +288,8 @@ watch(gameSeq, (value) => {
     stopTimer()
   }
 })
+
+
 
 onMounted(() => {
   // const elVideo = document.querySelector('.is-audio') as HTMLDivElement
@@ -427,8 +439,19 @@ onMounted(() => {
       </v-col>
     </v-row>
     <v-overlay
+      v-model="showAlways"
+      no-click-animation
+      contained
+      persistent
+      scrim="transparent"
+      class="always-visible-overlay"
+    >
+      <div class="shape2-container"></div>
+    </v-overlay>
+    <v-overlay
       v-model="alert"
       no-click-animation
+      contained
       persistent
       scrim="#000"
       class="align-center justify-center alert-overlay"
@@ -844,8 +867,7 @@ ul#exam-list {
     letter-spacing: -1px;
     line-height: 1.3em;
     color: #000;
-    bottom: 50px;
-    margin-top: 28px;
+    top: 40px;
     margin-left: 85px;
     word-break: keep-all;
     max-height: 70px;
@@ -974,20 +996,60 @@ ul#exam-list {
 }
 
 .alert-overlay {
-  z-index: 99999 !important;
+  z-index: 999999 !important;
+}
+
+.shape2-container {
+  position: absolute;
+  top: 0px;
+  left: 21px;
+  width: 112px;
+  height: 80px;
+  background: transparent url(@/assets/img/top/Shape2.png) no-repeat center center;
+  background-size: contain;
+  z-index: 1000000;
+  pointer-events: none;
+}
+
+// alert 활성화 시 상단 요소들 어둡게
+:deep(.v-overlay--active) ~ * #course-title,
+:deep(.v-overlay--active) ~ * .area-chapter {
+  filter: brightness(0.25) !important;
 }
 
 .alert-overlay :deep(.v-overlay__scrim) {
-  position: fixed !important;
+  position: absolute !important;
   top: 0 !important;
   left: 0 !important;
-  width: 100vw !important;
-  height: 100vh !important;
-  z-index: 99998 !important;
+  width: 1120px !important;
+  height: 630px !important;
+  z-index: 999998 !important;
+  margin: 0 !important;
 }
 
 .alert-overlay :deep(.v-overlay__content) {
-  z-index: 99999 !important;
+  position: relative !important;
+  z-index: 999999 !important;
+}
+
+.always-visible-overlay {
+  pointer-events: none;
+  z-index: 1000000 !important;
+}
+
+.always-visible-overlay :deep(.v-overlay__scrim) {
+  display: none;
+}
+
+.always-visible-overlay .shape2-container {
+  position: absolute;
+  top: 0px;
+  left: 21px;
+  width: 112px;
+  height: 80px;
+  background: transparent url(@/assets/img/top/Shape2.png) no-repeat center center;
+  background-size: contain;
+  pointer-events: none;
 }
 
 .countdown-overlay {

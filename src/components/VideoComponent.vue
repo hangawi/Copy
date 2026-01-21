@@ -858,7 +858,7 @@ onBeforeUnmount(() => {
   position: absolute;
   top: calc(50% - 314px);
   left: calc(50% - 429px); // 챕터이름 왼쪽으로 조정 숫자가 클수록 왼쪽
-  z-index: 9999;
+  z-index: 9997;
   background: transparent url(@/assets/img/top/shape.png) no-repeat center center;
   background-size: contain;
   width: 290px; // shape.png 배경 너비
@@ -884,7 +884,7 @@ onBeforeUnmount(() => {
 }
 .script-container {
   max-width: 1120px;
-  z-index: 9999;
+  z-index: 9997;
 }
 #script-area {
   max-width: 1120px;
@@ -1024,7 +1024,7 @@ onBeforeUnmount(() => {
   height: 39px;
   background-size: contain !important;
   text-indent: -9999em;
-  z-index: 9999;
+  z-index: 9997;
 }
 
 #index-menu {
@@ -1139,7 +1139,7 @@ onBeforeUnmount(() => {
 }
 
 #refHelper {
-  z-index: 9999;
+  z-index: 9997;
   position: absolute;
   width: 1120px;
   max-width: 1120px;
