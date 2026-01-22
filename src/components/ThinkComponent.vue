@@ -32,6 +32,7 @@ const handleStart = () => {
 
   const elButton = document.querySelector('.think-intro-container .btnStart') as HTMLElement
   const elAnswer = document.querySelector('.think-intro-container .area-answer') as HTMLElement
+  const elQuestion = document.querySelector('.think-intro-container .questionHead p') as HTMLElement
 
   elButton.classList.remove('animate__delay-2s')
   elButton.classList.add('animate__flipOutX')
@@ -39,6 +40,12 @@ const handleStart = () => {
   setTimeout(() => {
     elAnswer.classList.remove('hidden')
     elAnswer.classList.add('animate__fadeIn')
+
+    // 스크롤 활성화 유지
+    if (elQuestion) {
+      elQuestion.style.pointerEvents = 'auto'
+      elQuestion.style.userSelect = 'auto'
+    }
   }, 500)
 }
 
@@ -106,6 +113,8 @@ onMounted(() => {
   top: 342px; // 적어질수록 위로 올라감
   left: 0;
   transition: background 300ms ease-in-out;
+  pointer-events: auto;  // 버튼만 클릭 가능
+  z-index: 1;
   &:hover {
     background: transparent url(@/assets/img/think/btnThinkOn.png) no-repeat 0 0;
     background-size: contain;
@@ -120,33 +129,70 @@ onMounted(() => {
   margin-top: 1dvh;
   margin-left: 2px;
   margin-bottom: -40px;
-  line-height: 1.2em;
+  line-height: 1.0em;
   word-break: keep-all;
   color: #0e7300;
   position: absolute;
-  top: 130px; //적어질수록 위로 올라감
+  top: 113px; //적어질수록 위로 올라감
   left: 120px; //적어질수록 왼쪽으로 이동
   max-width: 800px;
+  z-index: 10;  // 질문 영역을 버튼보다 위로
   p {
     position: absolute;
-    width: 900px;
-    display: table;
+    width: 865px;
+    max-height: 135px;  // 스크롤 공간(높이) 증가
+    overflow-y: auto;
+    display: block;
+    padding-right: 10px;
+    cursor: default;  // 커서 모양
+    pointer-events: auto;  // 기본적으로 활성화
+    user-select: text;  // 텍스트 선택 가능
+
+    // 스크롤바 스타일
+    &::-webkit-scrollbar {
+      width: 10px;  // 스크롤바 너비 증가
+      background-color: #6AB554;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: #808080;  // 회색
+      border-radius: 10px;
+      min-height: 50px;  // 최소 높이
+    }
+    &::-webkit-scrollbar-track {
+      background-color: #6AB554;
+      border-radius: 10px;
+    }
+
+    // 스크롤바 버튼
+    &::-webkit-scrollbar-button {
+      display: block;
+      height: 16px;
+      background-color: #6AB554;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    &::-webkit-scrollbar-button:vertical:start:decrement {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23808080' d='M6 4l-4 4h8z'/%3E%3C/svg%3E");
+    }
+
+    &::-webkit-scrollbar-button:vertical:end:increment {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23808080' d='M6 8l4-4H2z'/%3E%3C/svg%3E");
+    }
+
     img, span {
       position: relative;
-      //float: left;
       display: inline-block;
-      height: 90px;
+      vertical-align: middle;
     }
     img {
       width: 30px;
       margin: 0 10px;
     }
     span {
-      display: table-cell;
-      vertical-align: middle;
+      display: inline;
       max-width: 800px;
-      line-height: 40px;
-      top: -5px;
+      line-height: 33px;
       text-align: left;
       letter-spacing: -2px;
     }
@@ -165,7 +211,7 @@ onMounted(() => {
 .area-answer {
   //background: transparent url(@/assets/img/think/bgAnswer.png) no-repeat 0 0;
   //background-size: contain;
-  width: 1420px;
+  width: 1000px;
   height: 500px;
   bottom: 0;
   position: absolute;
@@ -175,7 +221,7 @@ onMounted(() => {
     left: 133px;
     max-width: 889px;
     height: 190px;
-    line-height: 1.2em;
+    line-height: 1.0em;
     overflow-y: auto;
     word-break: keep-all;
     font-family: 'Paperlogy-4Regular', sans-serif;

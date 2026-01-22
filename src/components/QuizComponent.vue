@@ -386,7 +386,7 @@ onMounted(() => {
 
     <v-row class="ma-0 area-question">
       <v-col class="pa-0">
-        <div class="questionHead animate__animated animate__flipInX animate__delay-4_0s">
+        <div :class="['questionHead', 'animate__animated', 'animate__flipInX', 'animate__delay-4_0s', { 'questionHead-tall': questionLists[quizSeq].tall }]">
           <p v-html="questionLists[quizSeq].question" />
         </div>
       </v-col>
@@ -403,14 +403,14 @@ onMounted(() => {
     </v-row>
     <v-row
       class="ma-0 area-exam"
-      :class="[questionLists[quizSeq].tall ? 'mt-16' : (questionLists[quizSeq].sentence ? 'mt-0' : 'mt-0')]">
+      :class="[questionLists[quizSeq].tall ? 'mt-10' : (questionLists[quizSeq].sentence ? 'mt-0' : 'mt-0')]">
       <v-col>
         <ul id="exam-list">
           <li
             v-for="(exam, index) in questionLists[quizSeq].examLists"
             :id="`exam_number_${index}`"
             :key="index"
-            :class="`exam-lists animate__animated animate__fadeIn animate__delay-5_${index * 2}s`"
+            :class="['exam-lists', 'animate__animated', 'animate__fadeIn', `animate__delay-5_${Number(index) * 2}s`, { 'exam-lists-long': quizSeq === 1 }]"
             @click="handleClickExam($event, index)"
           >
             <div
@@ -418,7 +418,7 @@ onMounted(() => {
               class="d-inline-block exam-answer animate__animated animate__lightSpeedInLeft animate__delay-5_0s"
             />
             <div class="d-inline-block exam-number rounded-circle" v-html="(index + 1)" />
-            <div class="d-inline-block exam-text" v-html="exam" />
+            <div :class="['d-inline-block', 'exam-text', { 'exam-text-long': quizSeq === 1 }]" v-html="exam" />
           </li>
         </ul>
       </v-col>
@@ -692,7 +692,7 @@ onMounted(() => {
   position: absolute;
   left: -20px;
   top: 180px;
-  width: 100%;
+  width: 90%;
 }
 
 .questionNumber {
@@ -704,7 +704,7 @@ onMounted(() => {
 
 .questionHead {
   font-family: 'Paperlogy-7Bold', serif;
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 500;
   letter-spacing: -1px;
   margin-left: 120px;
@@ -721,6 +721,10 @@ onMounted(() => {
     color: #ff6699;
     border-bottom: 2px solid;
   }
+}
+
+.questionHead-tall {
+  margin-top: -15px;  // tall: true일 때 적용될 스타일
 }
 
 // 지문 영역
@@ -785,11 +789,31 @@ ul#exam-list {
       transition: background 200ms ease-in-out;
     }
     &.exam-text {
-      font-size: 26px;
-      text-indent: 14px;
+      font-size: 24px;
+      text-indent: 12px;
       font-family: 'Paperlogy-4Regular', serif;
+      line-height: 1.4em;
+    }
+    &.exam-text-long {
+      flex: 1 !important;
+      max-width: 650px !important;
+      line-height: 1.5em !important;
+      word-break: keep-all !important;
+      white-space: normal !important;
+      text-indent: 0 !important;
+      margin-top: -1px !important;  // 번호와 텍스트 첫 줄 높이 맞춤
     }
   }
+}
+
+.exam-lists-long {
+  height: auto !important;
+  min-height: 50px !important;
+  width: 700px !important;
+  display: flex !important;
+  align-items: flex-start !important;  // 번호를 첫 번째 줄에 맞춤
+  gap: 12px !important;
+  margin: 0 auto !important;  // 좌우 중앙 정렬
 }
 
 // 숫자별 개별 padding 조정
@@ -872,7 +896,7 @@ ul#exam-list {
     word-break: keep-all;
     max-height: 70px;
     overflow-y: auto;
-
+    width: 660px;
     scrollbar-width: thin;
     scrollbar-color: rgba(0, 0, 0, 0.4) transparent;
 
