@@ -69,7 +69,7 @@ axios.get('/data/14.json').then((result) => {
     },
   ]
 
-  scriptText.value = json.scripts[7] as string
+  scriptText.value = json.scripts[6] as string
 
   setTimeout(() => {
     isReady.value = true

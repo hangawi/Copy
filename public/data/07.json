@@ -15,6 +15,7 @@
   "video_5": "../mp4/07_01.mp4",
   "video_6": "../mp4/07_02.mp4",
   "video_7": "../mp4/07_03.mp4",
+  "video_8": "../mp4/think.mp4",
   "video_9": "../mp4/quiz.mp4",
   "video_10": "../mp4/summary.mp4",
   "video_11": "../mp4/outro_01.mp4",
@@ -25,11 +26,16 @@
     { "category": "2", "showChapter":  false, "seq": "4", "title": "본문1" },
     { "category": "2", "showChapter":  false, "seq": "5", "title": "본문2" },
     { "category": "2", "showChapter":  false, "seq": "6", "title": "본문3" },
-    { "category": "3", "showChapter":  true,  "seq": "7", "title": "퀴즈" },
-    { "category": "3", "showChapter":  true,  "seq": "8", "title": "정리하기" },
-    { "category": "3", "showChapter":  false, "seq": "9", "title": "아웃트로" }
+    { "category": "3", "showChapter":  true,  "seq": "7", "title": "생각해보기" },
+    { "category": "3", "showChapter":  true,  "seq": "8", "title": "퀴즈" },
+    { "category": "3", "showChapter":  true,  "seq": "9", "title": "정리하기" },
+    { "category": "3", "showChapter":  false, "seq": "10", "title": "아웃트로" }
   ],
-  "think": null,
+  "think":
+  {
+    "question": "한 주택 소유자가 옥상에 태양광 패널을 설치했는데, 예상 발전량의 70%밖에 나오지 않습니다. <br>점검 결과 인버터와 패널은 정상이었고, 낙엽과 먼지로 패널 일부가 가려져 있었습니다.<br>'핫스팟' 현상과 'MPPT' 기능을 중심으로 발전량 저하 원인을 설명하고, 발전 효율을 회복하기 위한 개선 방안을 제시해봅시다.",
+    "answer": "발전량 저하 원인<br>낙엽과 먼지로 인한 부분 음영(Shadowing)이 발생하면 가려진 셀에서 '핫스팟' 현상이 일어난다. 핫스팟은 음영 부분이 전류 흐름을 막아 역방향 전압이 걸리면서 국부적으로 과열되어 효율이 급격히 떨어지는 현상이다. 인버터의 MPPT(최대 전력점 추적) 기능이 일사량과 온도 변화에 따라 최적 전압·전류를 찾으려 하지만, 부분 음영으로 인해 전체 스트링의 전력곡선이 왜곡되어 최적점을 찾지 못하고 발전량이 크게 감소한다.<br>개선 방안<br>패널 표면의 낙엽과 먼지를 주기적으로 청소하여 부분 음영을 제거해야 한다. 이를 통해 발전량을 5~15% 이상 회복할 수 있다. 또한 바이패스 다이오드가 제대로 작동하는지 점검하여 핫스팟 피해를 최소화하고, 필요시 마이크로 인버터나 옵티마이저 도입을 검토하여 각 패널을 독립적으로 제어함으로써 부분 음영의 영향을 줄일 수 있다.<br>"
+  },
   "quiz": [
     {
       "question": "태양광발전의 장점으로 옳지 않은 것은 ?",

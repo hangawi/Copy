@@ -14,6 +14,7 @@
   "video_4": "../mp4/keyword_01.mp4",
   "video_5": "../mp4/10_01.mp4",
   "video_6": "../mp4/10_02.mp4",
+  "video_8": "../mp4/think.mp4",
   "video_9": "../mp4/quiz.mp4",
   "video_10": "../mp4/summary.mp4",
   "video_11": "../mp4/outro_01.mp4",
@@ -23,11 +24,16 @@
     { "category": "1", "showChapter":  true,  "seq": "3", "title": "주요 키워드" },
     { "category": "2", "showChapter":  false, "seq": "4", "title": "본문1" },
     { "category": "2", "showChapter":  false, "seq": "5", "title": "본문2" },
-    { "category": "3", "showChapter":  true,  "seq": "6", "title": "퀴즈" },
-    { "category": "3", "showChapter":  true,  "seq": "7", "title": "정리하기" },
-    { "category": "3", "showChapter":  false, "seq": "8", "title": "아웃트로" }
+    { "category": "3", "showChapter":  true,  "seq": "6", "title": "생각해보기" },
+    { "category": "3", "showChapter":  true,  "seq": "7", "title": "퀴즈" },
+    { "category": "3", "showChapter":  true,  "seq": "8", "title": "정리하기" },
+    { "category": "3", "showChapter":  false, "seq": "9", "title": "아웃트로" }
   ],
-  "think": null,
+  "think":
+  {
+    "question": "AI 기반 전력 수급 예측 시스템이 \"효율성\"만을 목표로 학습하여 농촌 지역의 전력 공급 우선순위를 낮추고, 대규모 공장에 전력을 우선 배정하는 판단을 내렸습니다. 이 사례에서 나타난 AI 편향성과 공정성 문제를 설명하고, 투명성(XAI)이 이 문제를 해결하는 데 어떤 역할을 할 수 있는지 설명해봅시다.",
+    "answer": "이 사례는 목표 함수 편향으로, AI가 비용 최소화와 효율성만을 목표로 학습하여 송전 손실이 큰 농촌 지역을 구조적으로 불리하게 판단한 것이다. 에너지는 필수 공공재로서 결과적·분배적 공정성을 보장해야 하지만, 사회적 약자에게 과도한 부담을 주는 에너지 불평등을 초래했다. XAI(설명 가능 AI)를 도입하면 AI가 어떤 변수(지역, 수익성, 송전 손실)에 높은 가중치를 부여했는지 명확히 확인할 수 있어, 편향된 기준을 발견하고 수정할 수 있다. 이를 통해 책임 소재가 명확해지고 사회적 형평성을 고려한 에너지 정책 수립이 가능해진다."
+  },
   "quiz": [
     {
       "question": "최근 부각되는 AI 윤리 이슈 문제가 아닌것은 ?",

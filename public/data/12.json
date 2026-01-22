@@ -14,6 +14,7 @@
   "video_4": "../mp4/keyword_01.mp4",
   "video_5": "../mp4/10_01.mp4",
   "video_6": "../mp4/10_02.mp4",
+  "video_8": "../mp4/think.mp4",
   "video_9": "../mp4/quiz.mp4",
   "video_10": "../mp4/summary.mp4",
   "video_11": "../mp4/outro_01.mp4",
@@ -23,11 +24,16 @@
     { "category": "1", "showChapter":  true,  "seq": "3", "title": "주요 키워드" },
     { "category": "2", "showChapter":  false, "seq": "4", "title": "본문1" },
     { "category": "2", "showChapter":  false, "seq": "5", "title": "본문2" },
-    { "category": "3", "showChapter":  true,  "seq": "6", "title": "퀴즈" },
-    { "category": "3", "showChapter":  true,  "seq": "7", "title": "정리하기" },
-    { "category": "3", "showChapter":  false, "seq": "8", "title": "아웃트로" }
+    { "category": "3", "showChapter":  true,  "seq": "6", "title": "생각해보기" },
+    { "category": "3", "showChapter":  true,  "seq": "7", "title": "퀴즈" },
+    { "category": "3", "showChapter":  true,  "seq": "8", "title": "정리하기" },
+    { "category": "3", "showChapter":  false, "seq": "9", "title": "아웃트로" }
   ],
-  "think": null,
+  "think":
+  {
+    "question": "전기차 제조사가 배터리를 선택해야 합니다. A사는 장거리 주행을 위해 NCM 배터리를, B사는 가격 경쟁력과 안전성을 위해 LFP 배터리를 검토 중입니다. 양극재 성분의 차이가 에너지 밀도와 안전성에 미치는 영향을 중심으로, 각 배터리가 적합한 차량 유형과 그 이유를 설명해봅시다.",
+    "answer": "NCM 배터리는 니켈·코발트·망간 삼원계 양극재로 에너지 밀도가 높아 같은 무게로 더 많은 전기를 저장할 수 있어 장거리 주행이 필요한 고급 세단이나 SUV에 적합하다. 하지만 니켈 비중이 높을수록 열폭주 위험이 증가하여 정교한 BMS와 열관리가 필수다. 반면 LFP 배터리는 철과 인산을 사용해 화학적으로 안정적이고 열폭주 위험이 낮으며, 원자재 가격이 저렴해 경제성이 우수하다. 에너지 밀도는 NCM보다 낮지만 수명이 길고 급속충전에 강해, 도심 주행 위주의 중저가 전기차나 배달·택시용 상업차량에 적합하다."
+  },
   "quiz": [
     {
       "question": "ESS용으로 사용하는 배터리 중 리튬, 철, 인산염으로 구성된 배터리계열을 무엇이라 하는가? ",

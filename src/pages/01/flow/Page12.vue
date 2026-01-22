@@ -33,7 +33,7 @@ axios.get('/data/01.json').then((result) => {
   courseInfo.value = json.courseInfo
   pageInfo.value = json.pageInfo
   video.value = json.video_12 as string
-  scriptText.value = json.scripts[8] as string
+  scriptText.value = json.scripts[10] as string
 
   setTimeout(() => {
     isReady.value = true

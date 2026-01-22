@@ -15,6 +15,7 @@
   "video_5": "../mp4/06_01.mp4",
   "video_6": "../mp4/06_02.mp4",
   "video_7": "../mp4/06_03.mp4",
+  "video_8": "../mp4/think.mp4",
   "video_9": "../mp4/quiz.mp4",
   "video_10": "../mp4/summary.mp4",
   "video_11": "../mp4/outro_01.mp4",
@@ -25,11 +26,16 @@
     { "category": "2", "showChapter":  false, "seq": "4", "title": "본문1" },
     { "category": "2", "showChapter":  false, "seq": "5", "title": "본문2" },
     { "category": "2", "showChapter":  false, "seq": "6", "title": "본문3" },
-    { "category": "3", "showChapter":  true,  "seq": "7", "title": "퀴즈" },
-    { "category": "3", "showChapter":  true,  "seq": "8", "title": "정리하기" },
-    { "category": "3", "showChapter":  false, "seq": "9", "title": "아웃트로" }
+    { "category": "3", "showChapter":  true,  "seq": "7", "title": "생각해보기" },
+    { "category": "3", "showChapter":  true,  "seq": "8", "title": "퀴즈" },
+    { "category": "3", "showChapter":  true,  "seq": "9", "title": "정리하기" },
+    { "category": "3", "showChapter":  false, "seq": "10", "title": "아웃트로" }
   ],
-  "think": null,
+  "think":
+  {
+    "question": "한 지역이 태양광과 풍력 발전을 대폭 확대하려 하지만, 날씨에 따라 발전량이 들쭉날쭉해 전력망 안정성이 우려됩니다. 전력 당국은 ① 대용량 ESS 구축과 ② VPP(가상발전소) 도입을 검토 중입니다. 각 방안이 신재생 에너지의 '간헐성' 문제를 해결하는 원리와 장점을 설명해봅시다.",
+    "answer": "① 대용량 ESS 구축<br>ESS는 태양광·풍력 발전량이 많을 때 전력을 저장했다가 발전량이 부족할 때 방출하여 전력 공급을 평준화한다. 날씨 변화로 인한 급격한 발전량 변동을 완충하여 전력망의 주파수와 전압을 안정적으로 유지할 수 있으며, 최근 배터리 가격 하락으로 경제성이 높아지고 있다.<br>② VPP(가상발전소) 도입<br>VPP는 전국 각지에 흩어진 소규모 분산 에너지 자원을 ICT 기술로 통합 제어하여 하나의 발전소처럼 운영하는 시스템이다. 지역별로 날씨가 다르므로 한 곳의 발전량이 줄어들면 다른 지역으로 보완할 수 있어 전체 공급 안정성이 높아진다. 수요 반응(DR)을 통해 전력 수요 피크 시 소비를 조절하여 공급-수요 균형을 실시간으로 최적화할 수 있다."
+  },
   "quiz": [
     {
       "question": "다음중 에너지 kWh당 발전단가가 가장 비싼 발전방식은 무엇인가?",

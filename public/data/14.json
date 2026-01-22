@@ -14,6 +14,7 @@
   "video_4": "../mp4/keyword_01.mp4",
   "video_5": "../mp4/10_01.mp4",
   "video_6": "../mp4/10_02.mp4",
+  "video_8": "../mp4/think.mp4",
   "video_9": "../mp4/quiz.mp4",
   "video_10": "../mp4/summary.mp4",
   "video_11": "../mp4/outro_01.mp4",
@@ -23,11 +24,16 @@
     { "category": "1", "showChapter":  true,  "seq": "3", "title": "주요 키워드" },
     { "category": "2", "showChapter":  false, "seq": "4", "title": "본문1" },
     { "category": "2", "showChapter":  false, "seq": "5", "title": "본문2" },
-    { "category": "3", "showChapter":  true,  "seq": "6", "title": "퀴즈" },
-    { "category": "3", "showChapter":  true,  "seq": "7", "title": "정리하기" },
-    { "category": "3", "showChapter":  false, "seq": "8", "title": "아웃트로" }
+    { "category": "3", "showChapter":  true,  "seq": "6", "title": "생각해보기" },
+    { "category": "3", "showChapter":  true,  "seq": "7", "title": "퀴즈" },
+    { "category": "3", "showChapter":  true,  "seq": "8", "title": "정리하기" },
+    { "category": "3", "showChapter":  false, "seq": "9", "title": "아웃트로" }
   ],
-  "think": null,
+  "think":
+  {
+    "question": "한 오피스 빌딩이 BEMS를 도입했지만 단순 모니터링만 하고 있어 에너지 절감 효과가 5%에 그쳤습니다. 이제 AI와 디지털 트윈 기술을 추가 도입하려 합니다. 이 두 기술이 기존 BEMS의 한계를 어떻게 극복하여 에너지 절감 효과를 극대화할 수 있는지 설명해봅시다.",
+    "answer": "기존 BEMS는 데이터를 수집하여 관리자에게 보여주는 수준이라 관리자가 직접 판단하고 제어해야 해서 대응이 느리고 최적화가 어렵다. AI를 도입하면 기상 예보, 재실자 패턴, 전기 요금 변동을 실시간 학습하여 사람의 개입 없이 공조기·조명·블라인드를 자동 최적화하는 '자율운전 건물'이 가능해진다. 디지털 트윈은 가상 공간에 건물을 1:1로 복제하여 냉난방 설정을 바꾸거나 설비를 교체할 때의 효과를 미리 시뮬레이션할 수 있어, 시행착오 없이 최적의 절감 방안을 찾아낼 수 있다. AI의 실시간 자율제어와 디지털 트윈의 사전 시뮬레이션을 결합하면 에너지 절감 효과를 10~30%까지 높일 수 있다."
+  },
   "quiz": [
     {
       "question": "BEMS에 AI를 접목함으로써 예상되는 서비스중 해당되지 않는것은 ?",

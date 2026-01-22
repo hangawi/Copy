@@ -14,6 +14,7 @@
   "video_4": "../mp4/keyword_01.mp4",
   "video_5": "../mp4/10_01.mp4",
   "video_6": "../mp4/10_02.mp4",
+  "video_8": "../mp4/think.mp4",
   "video_9": "../mp4/quiz.mp4",
   "video_10": "../mp4/summary.mp4",
   "video_11": "../mp4/outro_01.mp4",
@@ -23,11 +24,16 @@
     { "category": "1", "showChapter":  true,  "seq": "3", "title": "주요 키워드" },
     { "category": "2", "showChapter":  false, "seq": "4", "title": "본문1" },
     { "category": "2", "showChapter":  false, "seq": "5", "title": "본문2" },
-    { "category": "3", "showChapter":  true,  "seq": "6", "title": "퀴즈" },
-    { "category": "3", "showChapter":  true,  "seq": "7", "title": "정리하기" },
-    { "category": "3", "showChapter":  false, "seq": "8", "title": "아웃트로" }
+    { "category": "3", "showChapter":  true,  "seq": "6", "title": "생각해보기" },
+    { "category": "3", "showChapter":  true,  "seq": "7", "title": "퀴즈" },
+    { "category": "3", "showChapter":  true,  "seq": "8", "title": "정리하기" },
+    { "category": "3", "showChapter":  false, "seq": "9", "title": "아웃트로" }
   ],
-  "think": null,
+  "think":
+  {
+    "question": "에너지 기업이 \"ESS 화재 사고 예방 대책 기술보고서\"를 AI로 작성하려 합니다. 단순히 \"ESS 화재 예방 방법을 설명해줘\"라고 입력하면 일반적인 답변만 나옵니다. 전문적인 기술보고서를 생성하기 위해 역할, 문서 목적, 독자, 목차, 제약조건, 출력 형식을 포함한 프롬프트를 작성하고, 환각 현상을 방지하기 위해 추가해야 할 명령어를 설명해봅시다.",
+    "answer": "\"너는 ESS 설계 및 안전 분야 선임 기술자이다. 본 문서는 발주처 제출용 기술보고서이며, 독자는 소방안전 담당자 및 기술위원이다. 주제는 ESS 화재 사고 예방 대책이다. 다음 목차로 작성하라: 개요, 화재 사고 주요 원인 분석, 예방 시스템 구성, 안전장치 및 기술 기준, 운영 관리 방안, 결론. 조건은 한국 소방법 및 전기안전기술기준에 근거하고, 전문 용어 사용하되 정의 포함하며, 주관적 표현 배제하고, 표 최소 한 개 포함하며, 보고서 문체 유지할 것.\" \n환각 방지를 위해 \"모르는 내용은 절대 추측하지 말고, 신뢰할 수 있는 법규와 기술기준에 기반해서만 답변하라. 답변 후 사실과 다를 가능성이 있는 부분을 스스로 검토하여 알려달라\"를 추가한다."
+  },
   "quiz": [
     {
       "question": "AI가 환각현상을 줄이도록 하기위한 프롬프트중 적절하지 않은 것은 ?",

@@ -999,18 +999,6 @@ ul#exam-list {
   z-index: 999999 !important;
 }
 
-.shape2-container {
-  position: absolute;
-  top: 0px;
-  left: 21px;
-  width: 112px;
-  height: 80px;
-  background: transparent url(@/assets/img/top/Shape2.png) no-repeat center center;
-  background-size: contain;
-  z-index: 1000000;
-  pointer-events: none;
-}
-
 // alert 활성화 시 상단 요소들 어둡게
 :deep(.v-overlay--active) ~ * #course-title,
 :deep(.v-overlay--active) ~ * .area-chapter {
@@ -1044,7 +1032,7 @@ ul#exam-list {
 .always-visible-overlay .shape2-container {
   position: absolute;
   top: 0px;
-  left: 21px;
+  left: 19px;
   width: 112px;
   height: 80px;
   background: transparent url(@/assets/img/top/Shape2.png) no-repeat center center;

@@ -45,7 +45,7 @@ axios.get('/data/03.json').then((result) => {
     }
   }
 
-  scriptText.value = json.scripts[6] as string
+  scriptText.value = json.scripts[5] as string
 
   setTimeout(() => {
     isReady.value = true
@@ -72,7 +72,7 @@ onMounted(() => {
     const elVideo = document.querySelector('#videoPlayer') as HTMLVideoElement
     elVideo.appendChild(elMain)
   }, 100)
-  parent.setCurrentPageNumber(8)
+  parent.setCurrentPageNumber(6)
 })
 </script>
 

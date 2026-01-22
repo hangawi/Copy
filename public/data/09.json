@@ -14,6 +14,7 @@
   "video_4": "../mp4/keyword_01.mp4",
   "video_5": "../mp4/09_01.mp4",
   "video_6": "../mp4/09_02.mp4",
+  "video_8": "../mp4/think.mp4",
   "video_9": "../mp4/quiz.mp4",
   "video_10": "../mp4/summary.mp4",
   "video_11": "../mp4/outro_01.mp4",
@@ -23,11 +24,16 @@
     { "category": "1", "showChapter":  true,  "seq": "3", "title": "주요 키워드" },
     { "category": "2", "showChapter":  false, "seq": "4", "title": "본문1" },
     { "category": "2", "showChapter":  false, "seq": "5", "title": "본문2" },
-    { "category": "3", "showChapter":  true,  "seq": "6", "title": "퀴즈" },
-    { "category": "3", "showChapter":  true,  "seq": "7", "title": "정리하기" },
-    { "category": "3", "showChapter":  false, "seq": "8", "title": "아웃트로" }
+    { "category": "3", "showChapter":  true,  "seq": "6", "title": "생각해보기" },
+    { "category": "3", "showChapter":  true,  "seq": "7", "title": "퀴즈" },
+    { "category": "3", "showChapter":  true,  "seq": "8", "title": "정리하기" },
+    { "category": "3", "showChapter":  false, "seq": "9", "title": "아웃트로" }
   ],
-  "think": null,
+  "think":
+  {
+    "question": "한 산업단지가 탄소중립을 위해 수소발전 도입을 검토 중입니다.<br> ① 블루수소(천연가스 개질+CCUS)와 ② 그린수소(신재생에너지 수전해) 중 선택해야 하는데, 현재(2025년) 경제성과 2030년 이후 장기 지속가능성 측면에서 각각의 장단점을 비교해봅시다.",
+    "answer": "① 블루수소 (천연가스 개질+CCUS)<br>현재 경제성이 높아 즉시 상업화가 가능하다. 천연가스를 개질(SMR)하여 수소를 생산하는 기술이 성숙되어 있고, CCUS로 탄소를 포집·저장하여 배출을 최소화할 수 있다. 기존 LNG 인프라를 활용할 수 있어 초기 투자비가 상대적으로 낮다. 하지만 화석연료에 의존하므로 장기적으로 완전한 탄소중립 달성이 어렵고, CCUS 설비 운영비와 CO₂ 저장 공간 확보가 지속적인 부담 요소다.<br>② 그린수소 (신재생에너지 수전해)<br>태양광·풍력 전기로 물을 전기분해하여 생산하므로 탄소 배출이 전혀 없어 진정한 탄소중립을 실현할 수 있다. 2030년 이후 신재생 발전 비용 하락과 수전해 효율 개선으로 경제성이 크게 향상될 전망이다. 하지만 현재는 생산비용이 블루수소보다 2~3배 높고, 전력 공급의 간헐성 문제로 안정적 생산이 어렵다. 장기적으로는 그린수소가 지속가능하지만, 단기적으로는 블루수소가 경제적이다."
+  },
   "quiz": [
     {
       "question": "외부에서 수소를 공급받거나, 천연가스(LNG) 등을 분해하여 수소를 추출하는 장치를 무엇인라 하는가?",

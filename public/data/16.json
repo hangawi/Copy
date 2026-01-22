@@ -14,6 +14,7 @@
   "video_4": "../mp4/keyword_01.mp4",
   "video_5": "../mp4/10_01.mp4",
   "video_6": "../mp4/10_02.mp4",
+  "video_8": "../mp4/think.mp4",
   "video_9": "../mp4/quiz.mp4",
   "video_10": "../mp4/summary.mp4",
   "video_11": "../mp4/outro_01.mp4",
@@ -23,11 +24,16 @@
     { "category": "1", "showChapter":  true,  "seq": "3", "title": "주요 키워드" },
     { "category": "2", "showChapter":  false, "seq": "4", "title": "본문1" },
     { "category": "2", "showChapter":  false, "seq": "5", "title": "본문2" },
-    { "category": "3", "showChapter":  true,  "seq": "6", "title": "퀴즈" },
-    { "category": "3", "showChapter":  true,  "seq": "7", "title": "정리하기" },
-    { "category": "3", "showChapter":  false, "seq": "8", "title": "아웃트로" }
+    { "category": "3", "showChapter":  true,  "seq": "6", "title": "생각해보기" },
+    { "category": "3", "showChapter":  true,  "seq": "7", "title": "퀴즈" },
+    { "category": "3", "showChapter":  true,  "seq": "8", "title": "정리하기" },
+    { "category": "3", "showChapter":  false, "seq": "9", "title": "아웃트로" }
   ],
-  "think": null,
+  "think":
+  {
+    "question": "포스코가 석탄 기반 용광로에서 수소환원제철로 전환하고, 현대차가 전기차 생산 공정에 RE100을 적용하는 것은 단순한 연료 교체를 넘어선 산업구조 전환입니다. 에너지 전환 정책이 철강과 자동차 산업의 핵심 경쟁력을 어떻게 바꾸고 있으며, 이 과정에서 쇠퇴가 예상되는 관련 산업은 무엇인지 설명해봅시다.",
+    "answer": "포스코의 수소환원제철은 석탄 대신 수소로 철광석을 환원하여 철을 생산하는 공정 혁신으로, 탄소 배출을 90% 이상 줄일 수 있어 탄소국경세(CBAM) 등 환경 규제에 대응하고 글로벌 철강 시장에서 경쟁력을 확보할 수 있다. 현대차의 RE100 공정 전환은 생산 단계에서부터 재생에너지를 사용하여 완성차의 탄소발자국을 낮춤으로써, RE100 요구 기업(애플, BMW 등)에 부품을 공급할 수 있는 자격을 갖추게 된다. 그러나 이러한 전환 과정에서 내연기관 엔진·배기장치 등 전용 부품 제조사와 기존 주유소·정비업계는 수요 감소로 시장 규모가 축소되며, 석탄 화력발전소 역시 단계적 폐쇄로 인해 쇠퇴가 예상된다."
+  },
   "quiz": [
     {
       "question": "에너지전환정책 중 에너지원 믹스전략이 아닌 것은 ?",

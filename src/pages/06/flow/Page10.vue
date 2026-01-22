@@ -56,7 +56,7 @@ const handleChangeIndex = (target: number) => {
 }
 
 onMounted(() => {
-  parent.setCurrentPageNumber(8)
+  parent.setCurrentPageNumber(9)
 })
 </script>
 

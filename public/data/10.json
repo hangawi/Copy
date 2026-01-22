@@ -14,6 +14,7 @@
   "video_4": "../mp4/keyword_01.mp4",
   "video_5": "../mp4/10_01.mp4",
   "video_6": "../mp4/10_02.mp4",
+  "video_8": "../mp4/think.mp4",
   "video_9": "../mp4/quiz.mp4",
   "video_10": "../mp4/summary.mp4",
   "video_11": "../mp4/outro_01.mp4",
@@ -23,11 +24,16 @@
     { "category": "1", "showChapter":  true,  "seq": "3", "title": "주요 키워드" },
     { "category": "2", "showChapter":  false, "seq": "4", "title": "본문1" },
     { "category": "2", "showChapter":  false, "seq": "5", "title": "본문2" },
-    { "category": "3", "showChapter":  true,  "seq": "6", "title": "퀴즈" },
-    { "category": "3", "showChapter":  true,  "seq": "7", "title": "정리하기" },
-    { "category": "3", "showChapter":  false, "seq": "8", "title": "아웃트로" }
+    { "category": "3", "showChapter":  true,  "seq": "6", "title": "생각해보기" },
+    { "category": "3", "showChapter":  true,  "seq": "7", "title": "퀴즈" },
+    { "category": "3", "showChapter":  true,  "seq": "8", "title": "정리하기" },
+    { "category": "3", "showChapter":  false, "seq": "9", "title": "아웃트로" }
   ],
-  "think": null,
+  "think":
+  {
+    "question": "전남 신안은 '고정식' 해상풍력에 '바람연금' 모델을 결합했고, 울산은 '부유식' 해상풍력으로 RE100 기업에 전력을 공급하는 전략을 선택했습니다. 두 지역이 서로 다른 방식을 선택한 이유를 해역 특성과 지역적 배경을 중심으로 설명해봅시다.",
+    "answer": "신안 해역은 수심이 얕아(50m 이하) 해저에 구조물을 고정하는 고정식이 경제적이며, 어업 중심 지역이라 주민 반대가 컸기 때문에 발전 수익을 배당하는 '바람연금'으로 수용성을 확보했다. 반면 울산은 수심이 깊어(100m 이상) 고정식 설치가 어렵고, RE100 기업이 많은 산업도시여서 재생에너지 수요가 명확하다. 따라서 부유식으로 깊은 바다의 강한 바람을 활용하고, 기업 전력 공급이라는 실용적 목적으로 지역 수용성을 자연스럽게 확보했다."
+  },
   "quiz": [
     {
       "question": "2025년 기준 신재생 에너지 발전량이 많은 에너지 원은 무엇인가?",

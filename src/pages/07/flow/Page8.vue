@@ -5,8 +5,6 @@ import VideoComponent from '@/components/VideoComponent.vue'
 
 import ThinkComponent from '@/components/ThinkComponent.vue'
 
-// import audio from '@/assets/sound/narr/think.mp3'
-
 const props = defineProps({
   currentPage: {
     type: Number,
@@ -37,7 +35,6 @@ axios.get('/data/07.json').then((result) => {
   pageInfo.value = json.pageInfo
   video.value = json.video_8 as string
 
-  // think가 있을 때만 설정
   if (json.think && json.think.question) {
     thinkContent.value = {
       question: json.think.question,
@@ -72,7 +69,7 @@ onMounted(() => {
     const elVideo = document.querySelector('#videoPlayer') as HTMLVideoElement
     elVideo.appendChild(elMain)
   }, 100)
-  parent.setCurrentPageNumber(8)
+  parent.setCurrentPageNumber(7)
 })
 </script>
 

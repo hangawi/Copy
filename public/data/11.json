@@ -14,6 +14,7 @@
   "video_4": "../mp4/keyword_01.mp4",
   "video_5": "../mp4/10_01.mp4",
   "video_6": "../mp4/10_02.mp4",
+  "video_8": "../mp4/think.mp4",
   "video_9": "../mp4/quiz.mp4",
   "video_10": "../mp4/summary.mp4",
   "video_11": "../mp4/outro_01.mp4",
@@ -23,11 +24,16 @@
     { "category": "1", "showChapter":  true,  "seq": "3", "title": "주요 키워드" },
     { "category": "2", "showChapter":  false, "seq": "4", "title": "본문1" },
     { "category": "2", "showChapter":  false, "seq": "5", "title": "본문2" },
-    { "category": "3", "showChapter":  true,  "seq": "6", "title": "퀴즈" },
-    { "category": "3", "showChapter":  true,  "seq": "7", "title": "정리하기" },
-    { "category": "3", "showChapter":  false, "seq": "8", "title": "아웃트로" }
+    { "category": "3", "showChapter":  true,  "seq": "6", "title": "생각해보기" },
+    { "category": "3", "showChapter":  true,  "seq": "7", "title": "퀴즈" },
+    { "category": "3", "showChapter":  true,  "seq": "8", "title": "정리하기" },
+    { "category": "3", "showChapter":  false, "seq": "9", "title": "아웃트로" }
   ],
-  "think": null,
+  "think":
+  {
+    "question": "한 태양광 발전소가 ESS를 구축하려는데, 안전성을 우선하는 A안(LFP 배터리)과 용량을 우선하는 B안(NCM 배터리)을 놓고 고민 중입니다. 과거 ESS 화재 사고 사례를 참고할 때, 각 배터리의 특성과 안전 대책을 고려하여 어떤 선택이 적절한지 설명해봅시다.",
+    "answer": "LFP 배터리는 에너지 밀도가 낮아 같은 용량을 위해 더 많은 공간이 필요하지만, 열폭주 위험이 낮고 화재 안정성이 우수하다. 반면 NCM 배터리는 에너지 밀도가 높아 공간 효율적이지만, 과충전이나 외부 충격 시 열폭주 위험이 높다. 과거 ESS 화재 사고의 주요 원인이 배터리 셀 불균형과 과충전이었던 점을 고려하면, 대규모 ESS에서는 안전성을 최우선으로 하는 LFP 배터리가 적합하다. 다만 LFP를 선택하더라도 BMS 이중화, 랙 간 물리적 격벽 설치, 항온항습 시스템, 실시간 AI 모니터링 등 다중 안전장치를 반드시 구축해야 화재를 예방할 수 있다."
+  },
   "quiz": [
     {
       "question": "ESS 시스템의 구성요소 설명으로 옳지 않은 것은 ?",

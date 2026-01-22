@@ -96,7 +96,7 @@ onMounted(() => {
     const elVideo = document.querySelector('#videoPlayer') as HTMLVideoElement
     elVideo.appendChild(elMain)
   }, 100)
-  parent.setCurrentPageNumber(7)
+  parent.setCurrentPageNumber(8)
 })
 </script>
 
