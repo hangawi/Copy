@@ -250,11 +250,31 @@ const handleRetry = () => {
 const handleNext = () => {
   challengeCount = 0
   quizCompleted.value = false
-  quizSeq.value++
   soundClick.play()
-
   stopTimer()
-  startCountdown()
+
+  quizSeq.value++
+
+  showCountdown.value = true
+  countdown.value = 3
+
+  countdownTimer = window.setInterval(() => {
+    if (countdown.value > 1) {
+      countdown.value--
+    }
+    else if (countdown.value === 1) {
+      countdown.value = 0
+    }
+    else {
+      clearInterval(countdownTimer!)
+      countdownTimer = null
+
+      showCountdown.value = false
+
+      resetTimer()
+      startTimer()
+    }
+  }, 1000)
 
   handleReady()
 }
@@ -471,8 +491,9 @@ onMounted(() => {
       v-model="showCountdown"
       contained
       persistent
-      scrim="transparent"
+      scrim="#ffffff"
       class="countdown-overlay"
+      :transition="false"
     >
       <div class="countdown-wrap">
         <p class="countdown-title">
@@ -750,13 +771,14 @@ ul#exam-list {
   position: absolute;
   left: 100px;
   top: 230px;
+  padding-top: 30px;
 }
 
 .exam-lists {
   list-style: none;
   width: fit-content;
   height: 40px;
-  padding-top: 30px;
+  margin-top: 0px;
   line-height: 36px;
   div {
     font-family: 'Paperlogy-4Regular', serif;
@@ -815,7 +837,7 @@ ul#exam-list {
   align-items: flex-start !important;  // 번호를 첫 번째 줄에 맞춤
   gap: 12px !important;
   margin: 0 auto !important;  // 좌우 중앙 정렬
-  padding-top: 30px !important;  // 일반 보기와 동일한 padding
+  margin-top: 30px !important;  // 일반 보기와 동일한 spacing
 }
 
 // 숫자별 개별 padding 조정
@@ -1067,7 +1089,16 @@ ul#exam-list {
 }
 
 .countdown-overlay {
-  z-index: 9999;
+  z-index: 999999 !important;
+}
+
+.countdown-overlay :deep(.v-overlay__scrim) {
+  opacity: 1 !important;
+  background-color: #ffffff !important;
+}
+
+.countdown-overlay :deep(.v-overlay__content) {
+  z-index: 1000000 !important;
 }
 
 .countdown-wrap {
