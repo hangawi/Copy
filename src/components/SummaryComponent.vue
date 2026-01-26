@@ -76,12 +76,12 @@ onMounted(() => {
 // 학습정리
 .summary-area {
   max-width: 880px;
-  max-height: 300px;  // 스크롤 영역 높이 제한 (29px * 10줄 = 290px)
+  max-height: 335px;  // 스크롤 영역 높이 제한 (29px * 10줄 = 290px)
   width: 900px;
   height: auto;
   position: relative;
   margin-left: 110px;
-  margin-top: 165px;
+  margin-top: 160px;
   font-family: 'Paperlogy-5Medium', sans-serif;
   font-size: 30px;
   letter-spacing: -1px;
@@ -90,9 +90,8 @@ onMounted(() => {
   overflow-x: hidden;
   overflow-y: auto;
   padding-right: 0px;
-  scroll-snap-type: y mandatory;
   &::-webkit-scrollbar {
-    width: 10px;
+    width: 8px;
     background-color: transparent;
   }
   &::-webkit-scrollbar-thumb {
@@ -102,14 +101,10 @@ onMounted(() => {
   &::-webkit-scrollbar-track {
     background-color: #ffffff;
     border-radius: 5px;
-    margin: 00px 0 00px 0;
+    margin: 40px 0 20px 0;
   }
   &::-webkit-scrollbar-button {
-    display: block;
-    height: 16px;
-    background-color: #ffffff;
-    background-repeat: no-repeat;
-    background-position: center;
+    display: none;
   }
   &::-webkit-scrollbar-button:vertical:start:decrement {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23808080' d='M6 4l-4 4h8z'/%3E%3C/svg%3E");
@@ -118,7 +113,7 @@ onMounted(() => {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23808080' d='M6 8l4-4H2z'/%3E%3C/svg%3E");
   }
   .summary-content {
-    margin: 20px !important;
+    margin: 0 20px 20px 20px !important;
   }
   .context {
     margin-left: 10px;
@@ -126,7 +121,7 @@ onMounted(() => {
     font-size: 30px;
     ul {
       li {
-        font-size: 23px;
+        font-size: 25px;
         line-height: 30px;
         word-break: keep-all;
         list-style-type: none;

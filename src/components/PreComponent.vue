@@ -93,16 +93,17 @@ const handleCheck = (row, col, e) => {
 }
 
 const handleDownload = (level) => {
-  let res = ''
+  let fileName = ''
 
   if (level === 1)
-    res = '/down/사전진단테스트 피드백 학습자료_초급.pdf'
+    fileName = '사전진단테스트 피드백 학습자료_초급.pdf'
   else if (level === 2)
-    res = '/down/사전진단테스트 피드백 학습자료_중급.pdf'
+    fileName = '사전진단테스트 피드백 학습자료_중급.pdf'
   else
-    res = '/down/사전진단테스트 피드백 학습자료_고급.pdf'
+    fileName = '사전진단테스트 피드백 학습자료_고급.pdf'
 
-  window.open(res, '_blank')
+  // 새 창으로 PDF 열기
+  window.open(`../down/${fileName}`, '_blank')
 }
 
 const handleClose = () => {

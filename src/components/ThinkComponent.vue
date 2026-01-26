@@ -148,36 +148,22 @@ onMounted(() => {
     pointer-events: auto;  // 기본적으로 활성화
     user-select: text;  // 텍스트 선택 가능
 
-    // 스크롤바 스타일
+    // 스크롤바 스타일 (정리하기 기준 통일)
     &::-webkit-scrollbar {
-      width: 10px;  // 스크롤바 너비 증가
-      background-color: #6AB554;
+      width: 8px;
+      background-color: transparent;
     }
     &::-webkit-scrollbar-thumb {
-      background-color: #808080;  // 회색
-      border-radius: 10px;
-      min-height: 50px;  // 최소 높이
+      background-color: #808080;
+      border-radius: 100px;
     }
     &::-webkit-scrollbar-track {
       background-color: #6AB554;
-      border-radius: 10px;
+      border-radius: 5px;
+      margin: 00px 0 10px 0;  // 길이 조정: margin 값 변경
     }
-
-    // 스크롤바 버튼
     &::-webkit-scrollbar-button {
-      display: block;
-      height: 16px;
-      background-color: #6AB554;
-      background-repeat: no-repeat;
-      background-position: center;
-    }
-
-    &::-webkit-scrollbar-button:vertical:start:decrement {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23808080' d='M6 4l-4 4h8z'/%3E%3C/svg%3E");
-    }
-
-    &::-webkit-scrollbar-button:vertical:end:increment {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23808080' d='M6 8l4-4H2z'/%3E%3C/svg%3E");
+      display: none;  // 화살표 버튼 제거
     }
 
     img, span {
@@ -218,7 +204,8 @@ onMounted(() => {
   .answerContent {
     position: absolute;
     top: 160px; //적어질수록 위로 올라감
-    left: 133px;
+    left: 130px;
+    right: 3px;
     max-width: 889px;
     height: 190px;
     line-height: 1.4em;
@@ -229,9 +216,10 @@ onMounted(() => {
     font-weight: 400;
     color: #333;
     padding-right: 20px; // 스크롤바와 글자 간격
+    // 스크롤바 스타일 (정리하기 기준 통일)
     &::-webkit-scrollbar {
-      width: 10px;
-      background-color: #ffffff;
+      width: 8px;
+      background-color: transparent;
     }
     &::-webkit-scrollbar-thumb {
       background-color: #808080;
@@ -239,20 +227,11 @@ onMounted(() => {
     }
     &::-webkit-scrollbar-track {
       background-color: #ffffff;
-      border-radius: 0;
+      border-radius: 5px;
+      margin: 40px 0 20px 0;  // 길이 조정: margin 값 변경
     }
     &::-webkit-scrollbar-button {
-      display: block;
-      height: 16px;
-      background-color: #ffffff;
-      background-repeat: no-repeat;
-      background-position: center;
-    }
-    &::-webkit-scrollbar-button:vertical:start:decrement {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23808080' d='M6 4l-4 4h8z'/%3E%3C/svg%3E");
-    }
-    &::-webkit-scrollbar-button:vertical:end:increment {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23808080' d='M6 8l4-4H2z'/%3E%3C/svg%3E");
+      display: none;  // 화살표 버튼 제거
     }
   }
 }

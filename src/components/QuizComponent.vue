@@ -466,7 +466,6 @@ onMounted(() => {
       scrim="transparent"
       class="always-visible-overlay"
     >
-      <div class="shape2-container"></div>
       <div class="shape-container">
         <p>{{ chapterTitle }}</p>
       </div>
@@ -805,9 +804,6 @@ ul#exam-list {
       height: 28px;
       line-height: 1;
       font-size: 22px;
-      padding: 0;
-      padding-top: 2px;
-      padding-right: 0.5px;
       color: #000;
       border: 2px solid #000;
       border-radius: 50%;
@@ -816,6 +812,8 @@ ul#exam-list {
       justify-content: center;
       text-align: center;
       transition: background 200ms ease-in-out;
+      padding: 0;
+      margin: 0;
     }
     &.exam-text {
       font-size: 22px;
@@ -846,25 +844,21 @@ ul#exam-list {
   margin-top: 30px !important;  // 일반 보기와 동일한 spacing
 }
 
-// 숫자별 개별 padding 조정
-.exam-lists:nth-child(1) .exam-number {
-  padding-top: 3px;
-  padding-right: 0.5px;
+// 각 숫자별로 개별 padding 조정
+.exam-lists:nth-child(1) div.exam-number {
+  padding-top: 2px !important;
 }
 
-.exam-lists:nth-child(2) .exam-number {
-  padding-top: 2px;
-  padding-left: 1px;
+.exam-lists:nth-child(2) div.exam-number {
+  padding-top: 1px !important;
 }
 
-.exam-lists:nth-child(3) .exam-number {
-  padding-top: 3px;
-  padding-left: 0.5px;
+.exam-lists:nth-child(3) div.exam-number {
+  padding-top: 2px !important;
 }
 
-.exam-lists:nth-child(4) .exam-number {
-  padding-top: 2px;
-  padding-right: 0.5px;
+.exam-lists:nth-child(4) div.exam-number {
+  padding-top: 1px !important;
 }
 
 .exam-lists.selected {
@@ -1083,17 +1077,6 @@ ul#exam-list {
   display: none;
 }
 
-.always-visible-overlay .shape2-container {
-  position: absolute;
-  top: 0px;
-  left: 19px;
-  width: 112px;
-  height: 80px;
-  background: transparent url(@/assets/img/top/Shape2.png) no-repeat center center;
-  background-size: contain;
-  pointer-events: none;
-}
-
 .always-visible-overlay .shape-container {
   position: absolute;
   top: calc(50% - 314px);
@@ -1188,8 +1171,6 @@ ul#exam-list {
   font-size: 140px;
   font-weight: 700;
   color: #0e7300;
-  -webkit-text-stroke: 2px #0e7300;
-  text-shadow: 2px 2px 0 #0e7300;
   animation: pulse 1s ease-in-out;
 }
 
