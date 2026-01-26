@@ -353,7 +353,7 @@ onMounted(() => {
     v-if="gameSeq === 1"
     id="elOverlay"
     :key="quizSeq"
-    :class="quizSeq === 0 ? `w-100 pa-0 quiz-main-container animate__animated animate__fadeIn animate__slow` : `w-100 pa-0 quiz-main-container animate__animated animate__fadeIn`"
+    class="w-100 pa-0 quiz-main-container"
   >
     <v-row class="ma-0 mt-6 area-chapter">
       <v-col>
