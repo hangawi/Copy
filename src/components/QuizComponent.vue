@@ -410,7 +410,7 @@ onMounted(() => {
             v-for="(exam, index) in questionLists[quizSeq].examLists"
             :id="`exam_number_${index}`"
             :key="index"
-            :class="['exam-lists', 'animate__animated', 'animate__fadeIn', `animate__delay-5_${Number(index) * 2}s`, { 'exam-lists-long': quizSeq === 1 }]"
+            :class="['exam-lists', 'animate__animated', 'animate__fadeIn', `animate__delay-5_${Number(index) * 2}s`, { 'exam-lists-long': questionLists[quizSeq]?.longExam === true }]"
             @click="handleClickExam($event, index)"
           >
             <div
@@ -418,7 +418,7 @@ onMounted(() => {
               class="d-inline-block exam-answer animate__animated animate__lightSpeedInLeft animate__delay-5_0s"
             />
             <div class="d-inline-block exam-number rounded-circle" v-html="(index + 1)" />
-            <div :class="['d-inline-block', 'exam-text', { 'exam-text-long': quizSeq === 1 }]" v-html="exam" />
+            <div :class="['d-inline-block', 'exam-text', { 'exam-text-long': questionLists[quizSeq]?.longExam === true }]" v-html="exam" />
           </li>
         </ul>
       </v-col>
@@ -704,11 +704,11 @@ onMounted(() => {
 
 .questionHead {
   font-family: 'Paperlogy-7Bold', serif;
-  font-size: 28px;
+  font-size: 30px;
   font-weight: 500;
   letter-spacing: -1px;
   margin-left: 120px;
-  margin-top: 0;
+  margin-top: 10px;
   line-height: 1.2em;
   word-break: keep-all;
   color: #0e7300;
@@ -724,7 +724,7 @@ onMounted(() => {
 }
 
 .questionHead-tall {
-  margin-top: -15px;  // tall: true일 때 적용될 스타일
+  margin-top: -6px;  // tall: true일 때 적용될 스타일
 }
 
 // 지문 영역
@@ -755,8 +755,9 @@ ul#exam-list {
 .exam-lists {
   list-style: none;
   width: fit-content;
-  height: 50px;
-  line-height: 44px;
+  height: 40px;
+  padding-top: 30px;
+  line-height: 36px;
   div {
     font-family: 'Paperlogy-4Regular', serif;
     font-size: 28px;
@@ -772,10 +773,10 @@ ul#exam-list {
     }
     &.exam-number {
       background-color: #fff;
-      width: 33px;
-      height: 33px;
+      width: 28px;
+      height: 28px;
       line-height: 1;
-      font-size: 24px;
+      font-size: 22px;
       padding: 0;
       padding-top: 2px;
       padding-right: 0.5px;
@@ -789,7 +790,7 @@ ul#exam-list {
       transition: background 200ms ease-in-out;
     }
     &.exam-text {
-      font-size: 24px;
+      font-size: 22px;
       text-indent: 12px;
       font-family: 'Paperlogy-4Regular', serif;
       line-height: 1.4em;
@@ -797,7 +798,7 @@ ul#exam-list {
     &.exam-text-long {
       flex: 1 !important;
       max-width: 650px !important;
-      line-height: 1.5em !important;
+      line-height: 1.4em !important;
       word-break: keep-all !important;
       white-space: normal !important;
       text-indent: 0 !important;
@@ -808,12 +809,13 @@ ul#exam-list {
 
 .exam-lists-long {
   height: auto !important;
-  min-height: 50px !important;
+  min-height: 40px !important;  // 일반 보기와 동일
   width: 700px !important;
   display: flex !important;
   align-items: flex-start !important;  // 번호를 첫 번째 줄에 맞춤
   gap: 12px !important;
   margin: 0 auto !important;  // 좌우 중앙 정렬
+  padding-top: 30px !important;  // 일반 보기와 동일한 padding
 }
 
 // 숫자별 개별 padding 조정
@@ -1071,7 +1073,7 @@ ul#exam-list {
 .countdown-wrap {
   width: 1120px;
   height: 630px;
-  background: transparent url(@/assets/img/quiz/bgQuizCountDown.png) no-repeat 0 0;
+  background: #fff url(@/assets/img/quiz/bgQuizCountDown.png) no-repeat 0 0;
   background-size: contain;
   display: flex;
   flex-direction: column;

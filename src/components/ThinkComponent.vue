@@ -123,10 +123,10 @@ onMounted(() => {
 
 .questionHead {
   font-family: 'Paperlogy-8ExtraBold', serif;
-  font-size: 26px; //생각해보기 제목 폰트 사이즈
+  font-size: 31px; //생각해보기 제목 폰트 사이즈
   font-weight: 400;
   letter-spacing: -1px;
-  margin-top: 1dvh;
+  margin-top: 3dvh;
   margin-left: 2px;
   margin-bottom: -40px;
   line-height: 1.0em;
@@ -134,16 +134,16 @@ onMounted(() => {
   color: #0e7300;
   position: absolute;
   top: 113px; //적어질수록 위로 올라감
-  left: 120px; //적어질수록 왼쪽으로 이동
+  left: 155px; //적어질수록 왼쪽으로 이동
   max-width: 800px;
   z-index: 10;  // 질문 영역을 버튼보다 위로
   p {
     position: absolute;
-    width: 865px;
-    max-height: 135px;  // 스크롤 공간(높이) 증가
+    width: 828px;
+    max-height: 115px;  // 스크롤 공간(높이) 증가
     overflow-y: auto;
     display: block;
-    padding-right: 10px;
+    padding-right: 30px;
     cursor: default;  // 커서 모양
     pointer-events: auto;  // 기본적으로 활성화
     user-select: text;  // 텍스트 선택 가능
@@ -221,11 +221,11 @@ onMounted(() => {
     left: 133px;
     max-width: 889px;
     height: 190px;
-    line-height: 1.0em;
+    line-height: 1.4em;
     overflow-y: auto;
     word-break: keep-all;
     font-family: 'Paperlogy-4Regular', sans-serif;
-    font-size: 24px; //답변 글씨 크기
+    font-size: 23px; //답변 글씨 크기
     font-weight: 400;
     color: #333;
     padding-right: 20px; // 스크롤바와 글자 간격

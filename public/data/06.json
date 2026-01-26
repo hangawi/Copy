@@ -9,16 +9,16 @@
     "subMenu2": 6,
     "subMenu3": 9
   },
-  "video_1": "../mp4/intro_01.mp4",
-  "video_3": "../mp4/goal_01.mp4",
-  "video_4": "../mp4/keyword_01.mp4",
+  "video_1": "../mp4/intro_06.mp4",
+  "video_3": "../mp4/goal_06.mp4",
+  "video_4": "../mp4/keyword_06.mp4",
   "video_5": "../mp4/06_01.mp4",
   "video_6": "../mp4/06_02.mp4",
   "video_7": "../mp4/06_03.mp4",
   "video_8": "../mp4/think.mp4",
   "video_9": "../mp4/quiz.mp4",
   "video_10": "../mp4/summary.mp4",
-  "video_11": "../mp4/outro_01.mp4",
+  "video_11": "../mp4/outro_06.mp4",
   "pageInfo": [
     { "category": "1", "showChapter":  false, "seq": "1", "title": "인트로" },
     { "category": "1", "showChapter":  true,  "seq": "2", "title": "학습목표" },
@@ -53,7 +53,7 @@
     {
       "question": "2024년 6월부터 시행된 「분산에너지 활성화 특별법」에 따른 변화사항이 아닌것은 ?",
       "sentence": null,
-      "tall": false,
+      "tall": true,
       "examLists": [
         "지역별 차동요금제 시행",
         "VPP 비즈니스 등장",

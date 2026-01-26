@@ -76,12 +76,12 @@ onMounted(() => {
 // 학습정리
 .summary-area {
   max-width: 880px;
-  max-height: 400px;  // 스크롤 영역 높이 제한 (29px * 10줄 = 290px)
+  max-height: 500px;  // 스크롤 영역 높이 제한 (29px * 10줄 = 290px)
   width: 900px;
   height: auto;
   position: relative;
   margin-left: 110px;
-  margin-top: 135px;
+  margin-top: 115px;
   font-family: 'Paperlogy-5Medium', sans-serif;
   font-size: 30px;
   letter-spacing: -1px;
@@ -126,14 +126,14 @@ onMounted(() => {
     font-size: 30px;
     ul {
       li {
-        font-size: 22px;
-        line-height: 29px;
+        font-size: 25px;
+        line-height: 30px;
         word-break: keep-all;
         list-style-type: none;
         display: block;
         padding-left: 22px;
         position: relative;
-        margin: 10px 0;
+        margin: 15px 0;
         opacity: 0;
         animation: fadeInItem 0.5s forwards;
         scroll-snap-align: start;
