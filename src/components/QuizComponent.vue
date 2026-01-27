@@ -437,8 +437,8 @@ onMounted(() => {
               v-if="questionLists[quizSeq].correct === (index) && quizCompleted"
               class="d-inline-block exam-answer animate__animated animate__lightSpeedInLeft animate__delay-5_0s"
             />
-            <div class="d-inline-block exam-number rounded-circle" v-html="(index + 1)" />
-            <div :class="['d-inline-block', 'exam-text', { 'exam-text-long': questionLists[quizSeq]?.longExam === true }]" v-html="exam" />
+            <div :class="[questionLists[quizSeq]?.longExam ? '' : 'd-inline-block', 'exam-number', 'rounded-circle']" v-html="(Number(index) + 1)" />
+            <div :class="[questionLists[quizSeq]?.longExam ? '' : 'd-inline-block', 'exam-text', { 'exam-text-long': questionLists[quizSeq]?.longExam === true }]" v-html="exam" />
           </li>
         </ul>
       </v-col>
@@ -777,6 +777,7 @@ ul#exam-list {
   left: 100px;
   top: 230px;
   padding-top: 30px;
+  width: 900px;  // 전체 리스트 영역 너비 확장
 }
 
 .exam-lists {
@@ -814,6 +815,7 @@ ul#exam-list {
       transition: background 200ms ease-in-out;
       padding: 0;
       margin: 0;
+      flex-shrink: 0 !important;  // 번호가 찌그러지지 않게
     }
     &.exam-text {
       font-size: 22px;
@@ -823,25 +825,32 @@ ul#exam-list {
     }
     &.exam-text-long {
       flex: 1 !important;
-      max-width: 650px !important;
-      line-height: 1.4em !important;
+      max-width: none !important;
+      width: auto !important;
+      line-height: 1.3em !important;  // 줄 간격 조정
       word-break: keep-all !important;
       white-space: normal !important;
       text-indent: 0 !important;
-      margin-top: -1px !important;  // 번호와 텍스트 첫 줄 높이 맞춤
+      margin-top: 0 !important;
+      font-size: 22px !important;
     }
   }
 }
 
-.exam-lists-long {
+li.exam-lists.exam-lists-long {
   height: auto !important;
-  min-height: 40px !important;  // 일반 보기와 동일
-  width: 700px !important;
+  min-height: 40px !important;
+  width: 850px !important;  // 전체 너비 조정
+  max-width: none !important;
   display: flex !important;
-  align-items: flex-start !important;  // 번호를 첫 번째 줄에 맞춤
-  gap: 12px !important;
-  margin: 0 auto !important;  // 좌우 중앙 정렬
-  margin-top: 30px !important;  // 일반 보기와 동일한 spacing
+  flex-direction: row !important;
+  align-items: flex-start !important;
+  gap: 12px !important;  // 번호와 텍스트 간격 조정
+  margin: 0 !important;
+  margin-top: 0px !important;  // 위아래 간격 조정 (클수록 아래로)
+  margin-left: 0 !important;  // 좌우 위치 조정 (클수록 오른쪽)
+  padding: 0 !important;
+  line-height: normal !important;
 }
 
 // 각 숫자별로 개별 padding 조정
@@ -1118,13 +1127,13 @@ ul#exam-list {
 }
 
 .countdown-overlay .shape-container-countdown {
-  position: fixed;
+  position: absolute;
   top: calc(50% - 314px);
   left: calc(50% - 429px);
   background: transparent url(@/assets/img/top/shape.png) no-repeat center center;
   background-size: contain;
-  width: 317px;
-  height: 79px;
+  width: 318px;
+  height: 78px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1137,7 +1146,7 @@ ul#exam-list {
     font-weight: 200;
     letter-spacing: -1px;
     margin-left: 7px;
-    margin-top: -2px;
+    margin-top: -3px;
     word-break: keep-all;
     color: #000000;
     text-align: center;
