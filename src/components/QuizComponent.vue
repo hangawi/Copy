@@ -466,7 +466,7 @@ onMounted(() => {
       scrim="transparent"
       class="always-visible-overlay"
     >
-      <div class="shape-container">
+      <div class="shape-container" :data-chapter="courseInfo.chapterNumber">
         <p>{{ chapterTitle }}</p>
       </div>
     </v-overlay>
@@ -497,7 +497,7 @@ onMounted(() => {
       class="countdown-overlay"
       :transition="false"
     >
-      <div class="shape-container-countdown">
+      <div class="shape-container-countdown" :data-chapter="courseInfo.chapterNumber">
         <p>{{ chapterTitle }}</p>
       </div>
       <div class="countdown-wrap">
@@ -1102,15 +1102,25 @@ li.exam-lists.exam-lists-long {
 
   p {
     font-family: 'Paperlogy-5Medium', sans-serif;
-    font-size: 16px;
+    font-size: 19px;
     font-weight: 200;
     letter-spacing: -1px;
     margin-left: 7px;
-    margin-top: -4px;
+    margin-top: -2px;
     word-break: keep-all;
     color: #000000;
     text-align: center;
   }
+}
+
+.always-visible-overlay .shape-container[data-chapter="11"],
+.always-visible-overlay .shape-container[data-chapter="12"],
+.always-visible-overlay .shape-container[data-chapter="13"],
+.always-visible-overlay .shape-container[data-chapter="19"] {
+  background: transparent url(@/assets/img/top/Shapev2.png) no-repeat center center;
+  background-size: contain;
+  width: 380px;
+  left: calc(50% - 430px);
 }
 
 .countdown-overlay {
@@ -1128,11 +1138,11 @@ li.exam-lists.exam-lists-long {
 
 .countdown-overlay .shape-container-countdown {
   position: absolute;
-  top: calc(50% - 314px);
-  left: calc(50% - 429px);
+  top: calc(50% - 313.5px);
+  left: calc(50% - 430px);
   background: transparent url(@/assets/img/top/shape.png) no-repeat center center;
   background-size: contain;
-  width: 318px;
+  width: 319px;
   height: 78px;
   display: flex;
   align-items: center;
@@ -1142,14 +1152,29 @@ li.exam-lists.exam-lists-long {
 
   p {
     font-family: 'Paperlogy-5Medium', sans-serif;
-    font-size: 16px;
+    font-size: 19px;
     font-weight: 200;
     letter-spacing: -1px;
-    margin-left: 7px;
-    margin-top: -3px;
+    margin-left: 16.5px;
+    margin-top: -2px;
     word-break: keep-all;
     color: #000000;
     text-align: center;
+  }
+}
+
+.countdown-overlay .shape-container-countdown[data-chapter="11"],
+.countdown-overlay .shape-container-countdown[data-chapter="12"],
+.countdown-overlay .shape-container-countdown[data-chapter="13"],
+.countdown-overlay .shape-container-countdown[data-chapter="19"] {
+  background: transparent url(@/assets/img/top/Shapev2.png) no-repeat center center;
+  background-size: contain;
+  width: 380px;
+  left: calc(50% - 430px);
+  top: calc(50% - 313.5px);
+
+  p {
+    margin-left: 18px;
   }
 }
 
