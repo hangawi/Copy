@@ -838,6 +838,91 @@ questionLists.value = [
 }
 ```
 
+### 6.6. 챕터별 Shape.png 분기 처리 (Shapev2.png)
+
+#### 배경
+- 11, 12, 13, 19차시는 챕터 제목이 길어서 기본 Shape.png로는 텍스트가 잘림
+- 해당 차시에만 더 넓은 Shapev2.png 적용 필요
+
+#### 구현 방법
+**파일 위치**: `src/components/VideoComponent.vue`
+
+##### 1. HTML에 data-chapter 속성 추가 (788번째 줄)
+```vue
+<v-row v-if="pageInfo[currentPage - 1].showChapter"
+       id="fixedChapter"
+       class="ma-0 area-chapter animate__animated animate__flipInX"
+       :class="!isPlayed ? 'hidden' : ''"
+       :data-chapter="courseInfo.chapterNumber">
+  <v-col>
+    <p>{{ chapterTitle }}</p>
+  </v-col>
+</v-row>
+```
+
+##### 2. CSS 조건부 스타일 추가 (881-889번째 줄)
+```scss
+// 기본 Shape.png (전체 차시)
+.area-chapter {
+  position: absolute;
+  top: calc(50% - 313px);
+  left: calc(50% - 429px);
+  z-index: 9997;
+  background: transparent url(@/assets/img/top/shape.png) no-repeat center center;
+  background-size: contain;
+  width: 317px;
+  height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  p {
+    font-family: 'Paperlogy-5Medium', sans-serif;
+    font-size: 19px;
+    font-weight: 200;
+    letter-spacing: -1px;
+    margin-left: 7px;
+    margin-top: -2px;
+    word-break: keep-all;
+    color: #000000;
+    text-align: center;
+  }
+}
+
+// Shapev2.png (11, 12, 13, 19차시만)
+.area-chapter[data-chapter="11"],
+.area-chapter[data-chapter="12"],
+.area-chapter[data-chapter="13"],
+.area-chapter[data-chapter="19"] {
+  background: transparent url(@/assets/img/top/Shapev2.png) no-repeat center center;
+  background-size: contain;
+  width: 400px;
+  left: calc(50% - 450px);
+}
+```
+
+#### 크기 및 위치 조정 방법
+```scss
+.area-chapter[data-chapter="11"],
+.area-chapter[data-chapter="12"],
+.area-chapter[data-chapter="13"],
+.area-chapter[data-chapter="19"] {
+  width: 400px;  // Shapev2.png 가로 크기 조정
+  left: calc(50% - 450px);  // 중앙 정렬 위치 조정
+  // width 변경 시: left = calc(50% - 429px - (width - 317) / 2)
+}
+```
+
+**중앙 정렬 계산법**:
+- 기본 width: 317px, left: calc(50% - 429px)
+- 새 width가 400px이면: (400 - 317) / 2 = 41.5px 추가
+- 새 left: calc(50% - 429px - 41px) = calc(50% - 470px)
+
+#### 적용 대상 차시별 글자 수
+- 11차시: "에너지저장장치(ESS)의 원리와 종류" (20자)
+- 12차시: "배터리기술: 리튬이온, 전고체, 차세대 배터리" (25자) ⭐ 최장
+- 13차시: "스마트그리드와 전력계통 운영시스템(EMS)" (23자)
+- 19차시: "AI 프롬프트 엔지니어링과 실무 활용" (20자)
+
 ---
 
 ## 7. 트러블슈팅
@@ -1119,6 +1204,8 @@ npx vite build
 - ✅ PDF 다운로드 방식 변경 (새 창 열기)
 - ✅ 19차시 longExam 필드 추가
 - ✅ Shape.png 텍스트 위치 조정 방법 추가
+- ✅ 챕터별 Shape.png 분기 처리 (Shapev2.png for 11, 12, 13, 19차시)
+- ✅ data-chapter 속성 기반 조건부 스타일링 구현
 - ✅ 3개 가이드 문서 통합 (STYLE_GUIDE, 페이지구조가이드, BUILD_GUIDE)
 - ✅ 중복 내용 제거 및 구조 재정리
 

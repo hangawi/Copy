@@ -785,7 +785,7 @@ onBeforeUnmount(() => {
   </button>
 
   <Teleport v-if="isPlayed" to="#refInteractive">
-    <v-row v-if="pageInfo[currentPage - 1].showChapter" id="fixedChapter" class="ma-0 area-chapter animate__animated animate__flipInX" :class="!isPlayed ? 'hidden' : ''">
+    <v-row v-if="pageInfo[currentPage - 1].showChapter" id="fixedChapter" class="ma-0 area-chapter animate__animated animate__flipInX" :class="!isPlayed ? 'hidden' : ''" :data-chapter="courseInfo.chapterNumber">
       <v-col>
         <p>{{ chapterTitle }}</p>
       </v-col>
@@ -856,28 +856,36 @@ onBeforeUnmount(() => {
 }
 .area-chapter {
   position: absolute;
-  top: calc(50% - 314px);
-  left: calc(50% - 429px); // 챕터이름 왼쪽으로 조정 숫자가 클수록 왼쪽
+  top: calc(50% - 313px);
+  left: calc(50% - 429px);
   z-index: 9997;
   background: transparent url(@/assets/img/top/shape.png) no-repeat center center;
   background-size: contain;
-  width: 317px; // shape.png 배경 너비
-  height: 78px; // shape.png 배경 높이
+  width: 317px;
+  height: 78px;
   display: flex;
   align-items: center;
   justify-content: center;
   p {
     font-family: 'Paperlogy-5Medium', sans-serif;
-    font-size: 16px; // 챕터이름 크기
+    font-size: 19px;
     font-weight: 200;
     letter-spacing: -1px;
     margin-left: 7px;
     margin-top: -2px;
     word-break: keep-all;
-    color: #000000; // 챕터이름 색상
+    color: #000000;
     text-align: center;
-    //text-shadow: 2px 2px 2px #302495;
   }
+}
+.area-chapter[data-chapter="11"],
+.area-chapter[data-chapter="12"],
+.area-chapter[data-chapter="13"],
+.area-chapter[data-chapter="19"] {
+  background: transparent url(@/assets/img/top/Shapev2.png) no-repeat center center;
+  background-size: contain;
+  width: 380px;
+  left: calc(50% - 430px);
 }
 .video-js.vjs-has-started .vjs-tech {
   pointer-events: none;
@@ -1031,9 +1039,9 @@ onBeforeUnmount(() => {
   position: absolute;
   overflow: hidden;
   width: 1120px;
-  height: 630px;
+  height: 563px;
   pointer-events: none;
-  z-index: 9;
+  z-index: 1;  // 미디어바 뒤로 (미디어바는 z-index: 9999)
   button#index-open {
     position: fixed;
     //background: transparent url(@/assets/img/index/indexBtn.png) no-repeat 0 0;
@@ -1052,8 +1060,8 @@ onBeforeUnmount(() => {
     width: 50px;
     height: 50px;
     text-indent: -9999em;
-    top: 446px;
-    right: 0;
+    top: 386px;
+    right: 10px;
     pointer-events: all;
     transition: transform .3s ease-in-out;
     &:hover {
@@ -1070,28 +1078,31 @@ onBeforeUnmount(() => {
     position: absolute;
     bottom: 0;
     li.main-index {
-      width: 150px;
-      height: 150px;
+      width: 132px;  // indexBg.png 크기에 맞춤
+      height: 132px;  // indexBg.png 크기에 맞춤
       line-height: 30px;
       list-style: none;
       display: inline-block;
-      margin-top: 22px;
+      margin-top: 19px;  // 미디어바와 간격 (26px → 35px)
       margin-right: 15px;
       cursor: pointer;
-      //background: transparent url(@/assets/img/index/index_empty.png) no-repeat 0 0;
+      background-size: contain !important;  // hover 시 이미지 크기 맞춤
       transition: background 300ms ease-in-out;
       pointer-events: all;
     }
     li#page-1.active, li#page-1:hover {
-      background: transparent url(@/assets/img/index/index_1.png) no-repeat 0 0;
+      background: transparent url(@/assets/img/index/index_1.png) no-repeat center center;
+      background-size: contain;  // 이미지 크기 맞춤
       transition: background 300ms ease-in-out;
     }
     li#page-2.active, li#page-2:hover {
-      background: transparent url(@/assets/img/index/index_2.png) no-repeat 0 0;
+      background: transparent url(@/assets/img/index/index_2.png) no-repeat center center;
+      background-size: contain;  // 이미지 크기 맞춤
       transition: background 300ms ease-in-out;
     }
     li#page-3.active, li#page-3:hover {
-      background: transparent url(@/assets/img/index/index_3.png) no-repeat 0 0;
+      background: transparent url(@/assets/img/index/index_3.png) no-repeat center center;
+      background-size: contain;  // 이미지 크기 맞춤
       transition: background 300ms ease-in-out;
     }
     li#page-4.active, li#page-4:hover {
